@@ -1,0 +1,6 @@
+* text=auto
+*.lha binary
+*.mod binary
+*.vgm binary
+*.wav binary
+input/extracted/** binary

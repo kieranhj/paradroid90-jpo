@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# working files that the tools regenerate
+work_cust.bin
+flat.bin
+modcheck.wav
+
+# rendered audio -- regenerate with tools/render.py and tools/vgmrender.py
+*.wav
+
+# local bundles / scratch
+*.zip
