@@ -8,8 +8,11 @@ replay format, plays it back accurately, and converts it to ProTracker MOD and
 to SN76489 register logs for the BBC Micro.
 
 **[`docs/FORMAT.md`](docs/FORMAT.md)** is the reverse-engineered format
-specification. `docs/module_dump.txt` is a full decoded dump of this tune and
-`docs/dis_main.txt` is the annotated 68k disassembly of the driver.
+specification and **[`docs/COMPARISON.md`](docs/COMPARISON.md)** is a
+technical assessment of JPO against ProTracker — what each format buys and
+what it costs, with the measurements behind it. `docs/module_dump.txt` is a
+full decoded dump of this tune and `docs/dis_main.txt` is the annotated 68k
+disassembly of the driver.
 
 ## Layout
 
@@ -72,6 +75,7 @@ separation), `--loops`.
 
 ```
 python tools/dump.py $MOD --patterns        # songs, instruments, decoded patterns
+python tools/stats.py $MOD                  # the figures quoted in COMPARISON.md
 python tools/hunk.py $MOD flat.bin          # flatten + relocate the hunks
 python tools/m68k.py flat.bin 0x296 0xa3c   # disassemble the driver
 ```
@@ -163,6 +167,7 @@ converted files are not quiet.
 | `tools/jpo.py` | the replayer + Paula emulation |
 | `tools/render.py` | subsong → WAV |
 | `tools/dump.py` | songs / instruments / patterns dump |
+| `tools/stats.py` | data-footprint measurements (JPO vs the converted MOD) |
 | `tools/tomod.py` | subsong → ProTracker MOD |
 | `tools/tovgm.py` | subsong → SN76489 VGM (BBC Micro) |
 | `tools/vgmrender.py` | VGM → WAV through an SN76489 emulation |
