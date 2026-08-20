@@ -1,30 +1,44 @@
-# Paradroid 90 — Amiga "JPO" music: unpack, replay, convert
+# Amiga game music: unpack, reverse-engineer, replay, convert
 
-`input/Paradroid_90.lha`, from Exotica's
-[Paradroid 90](https://www.exotica.org.uk/wiki/Paradroid%2090) page, holds
-Jason Page's 1990 Amiga soundtrack for Hewson / Graftgold's *Paradroid 90*.
-This repo unpacks it, documents the undocumented
-replay format, plays it back accurately, and converts it to ProTracker MOD and
-to SN76489 register logs for the BBC Micro.
+Two undocumented Amiga music drivers, each taken apart from its 68k code,
+re-implemented in Python, and converted to ProTracker MOD and to SN76489
+register logs for the BBC Micro.
 
-**[`docs/FORMAT.md`](docs/FORMAT.md)** is the reverse-engineered format
-specification and **[`docs/COMPARISON.md`](docs/COMPARISON.md)** is a
-technical assessment of JPO against ProTracker — what each format buys and
-what it costs, with the measurements behind it. `docs/module_dump.txt` is a
-full decoded dump of this tune and `docs/dis_main.txt` is the annotated 68k
-disassembly of the driver.
+* **Paradroid 90** — Jason Page's "JPO" driver, 1990, Hewson / Graftgold.
+  `input/Paradroid_90.lha`, from Exotica's
+  [Paradroid 90](https://www.exotica.org.uk/wiki/Paradroid%2090) page.
+* **Nitro** — Tony Williams' "TW" driver, 1990, Psygnosis.
+  `input/Nitro.lha`.
+
+They are close to opposite designs. JPO is a parametric synthesiser: 17
+single-cycle waveforms, 8 KB of sample data, and every envelope, sweep and
+arpeggio inside the instrument record. TW is 90 KB of sampled instruments
+with no parameters at all, and every envelope, vibrato and arpeggio typed
+into the pattern stream. Same year, same hardware, same four channels.
+
+**[`docs/FORMAT.md`](docs/FORMAT.md)** and
+**[`docs/TW_FORMAT.md`](docs/TW_FORMAT.md)** are the reverse-engineered
+format specifications, and **[`docs/COMPARISON.md`](docs/COMPARISON.md)** is
+a technical assessment of JPO against ProTracker — what each format buys and
+what it costs, with the measurements behind it. `docs/module_dump.txt` and
+`docs/nitro_dump.txt` are full decoded dumps of the two tunes;
+`docs/dis_main.txt` and `docs/nitro_dis.txt` are the 68k disassemblies.
 
 ## Layout
 
 ```
-input/       Paradroid_90.lha and its extracted contents
-tools/       the replayer, the analysis tools and the two converters
+input/       the two .lha archives and their extracted contents
+tools/       the replayers, the analysis tools and the converters
 output/mod/  ProTracker conversions
 output/vgm/  SN76489 / BBC Micro conversions
 output/wav/  Amiga renders and BBC previews -- not checked in, see the
              README there for the one-liners that regenerate them
-docs/        format spec, module dump, disassembly
+docs/        format specs, module dumps, disassemblies
 ```
+
+Paradroid 90 is documented first; [Nitro](#nitro-the-tw-format) follows.
+
+# Paradroid 90: the JPO format
 
 ## Unpacking
 
@@ -158,7 +172,135 @@ instruments that clamp at the master (bass, lead) and those that do not
 (drums). The MOD and VGM converters apply a compensating 2× gain so the
 converted files are not quiet.
 
-## Tools
+
+# Nitro: the TW format
+
+`input/Nitro.lha` holds one file, `tw.Nitro`, the music from Psygnosis'
+*Nitro* (1990) as ripped for UADE. Music and sound by **Tony Williams**; the
+driver signs itself `(c) 1990 Tiny` in the middle of its voice contexts.
+
+```
+7z x input/Nitro.lha -oinput/extracted
+```
+
+Throughout this section, `$TW` means `input/extracted/Nitro/tw.Nitro`.
+
+## What the format is
+
+Not a container at all. `tw.Nitro` is a **raw 90 KB position-independent 68k
+blob** — no hunk header, no relocations, no magic — holding the driver, its
+tables, the sequence data and the samples. The whole interface is *call
+offset 0 once per vertical blank*; a song is started by poking its number
+into a state byte first. [`docs/TW_FORMAT.md`](docs/TW_FORMAT.md) has the
+full map.
+
+The sequencer advances one row every `tempo` frames (10 to 12.5 rows/s here)
+while the modulation — a four-parameter volume envelope with a separate
+release stage, vibrato with a delay, portamento that can be armed at note
+release, and nine arpeggio tables — runs every frame at 50 Hz. Instruments
+are just `(sample, length, loop, loop length)`: thirteen 8-bit PCM sounds,
+twelve of them one-shots that loop into 32 zero bytes when they run out, and
+one 16 KB looped bass. Six subsongs: a 2:02 main theme, a 26 s tune, three
+short jingles and a 10 s effect bed.
+
+Two details worth calling out. The period table is **exactly the ProTracker
+table** — 36 entries, 856 down to 113 — which is most of why the MOD
+conversion comes out clean. And the volume table has fifteen entries while
+the index can reach fifteen, so a note at full volume reads the first word
+of the code that follows it and comes out *quieter* than level 14; the
+replayer reproduces that rather than clamping, because the tune does use
+level 15.
+
+## Playing it
+
+```
+python tools/twrender.py $TW -s 1 -o output/wav/nitro_sub1.wav
+python tools/twrender.py $TW -s 1 --play           # render then play (Windows)
+python tools/twrender.py $TW -s 1 --trace          # print every note event
+```
+
+`tools/tw.py` is the replayer, a routine-for-routine reimplementation of the
+68k driver sharing the Paula emulation in `tools/jpo.py`. Song length comes
+from detecting when the sequencer state repeats, so subsong 1 renders its
+full 121.6 s period rather than stopping when one voice happens to wrap.
+
+## Inspecting it
+
+```
+python tools/twdump.py $TW --patterns          # songs, instruments, patterns
+python tools/m68k.py $TW 0x1a 0x7ba            # disassemble the driver
+```
+
+## Converting
+
+### ProTracker MOD
+
+```
+python tools/twtomod.py $TW -s 1 -o output/mod/nitro_sub1.mod
+```
+
+This one is a near-perfect structural fit. Both formats run off 20 ms
+frames, so setting the MOD speed to the driver's tempo makes **one driver
+row exactly one MOD row with zero drift**; the period table is ProTracker's,
+so notes are bit-exact and nothing falls outside 113..856; the instruments
+are ordinary 8-bit one-shots, so they are copied byte-for-byte, with the
+one looped instrument keeping its loop and the rest given two bytes of
+silence to loop in (which is what the driver does).
+
+What has to be approximated is the 50 Hz modulation against ProTracker's one
+effect per channel per row. Effects are chosen per cell in this order: `Cxx`
+on a note trigger, `0xy` while an arpeggio table runs, `1xx`/`2xx` while a
+portamento runs, `4xy` for vibrato (and `6xy` after the first vibrato row, so
+a decaying note can vibrate *and* track its envelope), and `Cxx` otherwise.
+
+Verified against the Amiga render by rendering the MOD through VLC:
+**0.92 correlation** between the two amplitude envelopes at row resolution,
+and 816 of 963 detected note onsets matching with a mean offset of
+—5 ms. The residual is entirely sub-row: at 10 ms resolution the
+correlation drops to 0.71, which is the ADSR detail that ProTracker
+structurally cannot hold.
+
+*Dropped in translation:* intra-row envelope shape, the exact arpeggio
+sequences (tables of up to nine offsets become MOD's three-step `0xy`), and
+volume changes on rows where a pitch effect wins the column.
+
+### BBC Micro (SN76489)
+
+```
+python tools/twtovgm.py $TW -s 1 -v -o output/vgm/nitro_sub1.vgm
+python tools/vgmrender.py output/vgm/nitro_sub1.vgm \
+       -o output/wav/nitro_sn_sub1.wav          # hear it without a BBC
+```
+
+VGM 1.50 at 50 Hz — the driver's own frame rate, so the log is
+frame-for-frame with the Amiga — with the SN76489 clock set to the BBC's
+4 MHz. `--rate 100` for a 100 Hz player.
+
+Going from four channels of PCM to three squares and a noise channel needs
+three decisions, all made automatically, all reported, all overridable:
+
+* **Which instruments are pitched.** Nothing in the data says. Each sample
+  is autocorrelated: strong repetition means a fundamental and a tone
+  channel, weak means percussion and the noise channel. That splits Nitro's
+  instruments cleanly, and voice 2 — which only ever plays the two drum
+  sounds — ends up entirely on noise, leaving all three tone channels for
+  the three melodic voices. Nothing is dropped.
+* **Pitch.** A sampled instrument's real pitch is
+  `(3546895 / period) / cycle_length`, and the cycle length differs per
+  instrument: 251 samples for the bass, 127 for the lead, 95 for the third
+  voice. Each tone channel then gets one constant octave shift taken from
+  the low end of its own range, so nothing hits the BBC's 122 Hz floor
+  (0 frames clipped in subsong 1) and the octave jumps survive.
+  `--transpose` shifts everything on top.
+* **Percussion timbre.** Each drum's noise shift rate comes from the
+  zero-crossing rate of its sample, putting the kick on 122 Hz and the
+  snare on 488 Hz.
+
+Verified by rendering the VGM through the SN76489 emulator in
+`tools/vgmrender.py` and measuring: the intended pitch is the strongest of
+its five nearest semitones in **100 of 103** probes across the tune.
+
+# Tools
 
 | | |
 |---|---|
@@ -171,18 +313,29 @@ converted files are not quiet.
 | `tools/tomod.py` | subsong → ProTracker MOD |
 | `tools/tovgm.py` | subsong → SN76489 VGM (BBC Micro) |
 | `tools/vgmrender.py` | VGM → WAV through an SN76489 emulation |
+| | *and for the TW format:* |
+| `tools/tw.py` | the TW replayer + Paula emulation |
+| `tools/twrender.py` | TW subsong → WAV |
+| `tools/twdump.py` | TW songs / instruments / patterns dump |
+| `tools/twtomod.py` | TW subsong → ProTracker MOD |
+| `tools/twtovgm.py` | TW subsong → SN76489 VGM (BBC Micro) |
 
 Requires Python 3. `capstone` is needed only by `m68k.py`.
 
 ## Credits and provenance
 
-The archive came from Exotica's
-[Paradroid 90](https://www.exotica.org.uk/wiki/Paradroid%2090) page. There is
+The Paradroid 90 archive came from Exotica's
+[Paradroid 90](https://www.exotica.org.uk/wiki/Paradroid%2090) page; there is
 more about the game itself on
 [Lemon Amiga](https://www.lemonamiga.com/game/paradroid-90).
 
-Music and sound by **Jason Page**. *Paradroid 90* © 1990 Graftgold / Hewson —
-programmed by Andrew Braybrook, O.O.P.S. kernel by Dominic Robinson, graphics
-by Michael A. Field, John Cumming and John W. Lilley. The archive's
-`Custom_Version` DeliTracker wrapper is by whoever ripped it. Everything in
-`tools/` here is new work; the music data and samples in `input/` are not.
+*Paradroid 90* © 1990 Graftgold / Hewson — music and sound by
+**Jason Page**, programmed by Andrew Braybrook, O.O.P.S. kernel by Dominic
+Robinson, graphics by Michael A. Field, John Cumming and John W. Lilley. The
+archive's `Custom_Version` DeliTracker wrapper is by whoever ripped it.
+
+*Nitro* © 1990 Psygnosis — music and sound by **Tony Williams**, whose
+driver signs itself `(c) 1990 Tiny`. `tw.Nitro` is a UADE-format rip.
+
+Everything in `tools/` and `docs/` here is new work; the music data and
+samples in `input/` are not.

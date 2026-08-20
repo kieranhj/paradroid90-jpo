@@ -1,0 +1,2434 @@
+== instruments (table $071e) ==
+ 0  $0016d8      32 bytes  one-shot
+ 1  $0016fc    1456 bytes  one-shot
+ 2  $001cac    3082 bytes  one-shot
+ 3  $0070de    4224 bytes  one-shot
+ 4  $00815e   16332 bytes  loop +12358 len 3974
+ 5  $0028b6    3464 bytes  one-shot
+ 6  $00363e   15008 bytes  one-shot
+ 7  $00c12a   12322 bytes  one-shot
+ 8  $00f14c    6370 bytes  one-shot
+ 9  $010a2e    8356 bytes  one-shot
+10  $013aec    4108 bytes  one-shot
+11  $012ad2    4122 bytes  one-shot
+12  $014af8    7458 bytes  one-shot
+
+== arpeggio tables (index $030e, 9 entries) ==
+ 0  +0 +12 +1 +13 +2 +14 +1 +13 +0 +12  (loop)
+ 1  +0 +0 +0 +7 +7 +7  (loop)
+ 2  +0 +8  (loop)
+ 3  +12 +12 +12 +0 +0 +0  (loop)
+ 4  +0 +0 +0 +5 +5 +5 +7 +7 +7  (loop)
+ 5  +0 +10  (loop)
+ 6  +0 +0 +0 +4 +4 +4 +7 +7 +7  (loop)
+ 7  +0 +0 +0 +3 +3 +3 +7 +7 +7  (loop)
+ 8  +0 +6 +1 +6 +2 +3 +1 +0 +5  (loop)
+
+== songs (table $09d2) ==
+1  tempo 5 (10.0 rows/s)  tracks $0a0e $0a2e $0a4c $0a76
+     v0: $0a8e $0aaa $0aaa $0aaa $0ad4 $0afb $0aaa $0aaa $0b3e $0b85 $0aaa $0aaa $0aaa $0aaa -> $0a12
+     v1: $0bd1 $0bee $0bee $0c2a $0c2a $0c77 $0bee $0bee $0cb9 $0cf7 $0d44 $0dcb $0dcb -> $0a32
+     v2: $0e16 $0e16 $0e16 $0e16 $0e16 $0e46 $0e16 $0e16 $0e16 $0e64 $0e88 $0ea6 $0ea6 $0ea6 $0ec3 $0ec3 $0e16 $0ea6 $0ea6 -> $0a50
+     v3: $0f0e $156b $0f46 $0f97 $0f97 $0fb2 $0fcc $0fd8 $106c $0f36 -> $0a7a
+2  tempo 4 (12.5 rows/s)  tracks $10bc $10c8 $10d0 $10dc
+     v0: $10e4 $10e4 $1149 $1568 -> $10bc
+     v1: $1161 $1568 -> $10c8
+     v2: $11ce $11ce $1219 $1568 -> $10d0
+     v3: $1235 $1568 -> $10dc
+3  tempo 4 (12.5 rows/s)  tracks $12a2 $12a4 $12a6 $12a8
+     v0: $12aa $12c8 $12e6 $130b (ends with $83 in the pattern)
+     v1: $12c8 $12e6 $130b (ends with $83 in the pattern)
+     v2: $12e6 $130b (ends with $83 in the pattern)
+     v3: $130b (ends with $83 in the pattern)
+4  tempo 4 (12.5 rows/s)  tracks $1330 $1332 $1334 $1336
+     v0: $1338 $1366 $138c $13ab (ends with $83 in the pattern)
+     v1: $1366 $138c $13ab (ends with $83 in the pattern)
+     v2: $138c $13ab (ends with $83 in the pattern)
+     v3: $13ab (ends with $83 in the pattern)
+5  tempo 5 (10.0 rows/s)  tracks $144a $1450 $1458 $1452
+     v0: $145a $145a $1483 $1499 $14f0 $14f0 $1510 $1523 (ends with $83 in the pattern)
+     v1: $1499 $14f0 $14f0 $1510 $1523 (ends with $83 in the pattern)
+     v2: $1523 (ends with $83 in the pattern)
+     v3: $14f0 $14f0 $1510 $1523 (ends with $83 in the pattern)
+6  tempo 1 (50.0 rows/s)  tracks $13c6 $13cc $13d2 $1570
+     v0: $13d8 -> $13c6
+     v1: $13f2 -> $13cc
+     v2: $141c -> $13d2
+     v3: $1568 -> $1570
+
+== 53 patterns ==
+$0a8e:
+   $0a8e  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $0a92  84 01 11       release at row 1, -1 every 1
+   $0a95  d7             inst 7
+   $0a96  f3             dur  20
+   $0a97  86             note off
+   $0a98  e1             dur  2
+   $0a99  0c             note C-2  (12)
+   $0a9a  09             note A-1  (9)
+   $0a9b  e1             dur  2
+   $0a9c  10             note E-2  (16)
+   $0a9d  0e             note D-2  (14)
+   $0a9e  0c             note C-2  (12)
+   $0a9f  09             note A-1  (9)
+   $0aa0  f3             dur  20
+   $0aa1  86             note off
+   $0aa2  e1             dur  2
+   $0aa3  0c             note C-2  (12)
+   $0aa4  09             note A-1  (9)
+   $0aa5  10             note E-2  (16)
+   $0aa6  0e             note D-2  (14)
+   $0aa7  0c             note C-2  (12)
+   $0aa8  09             note A-1  (9)
+   $0aa9  80             next pattern
+$0aaa:
+   $0aaa  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $0aae  84 01 11       release at row 1, -1 every 1
+   $0ab1  d7             inst 7
+   $0ab2  e1             dur  2
+   $0ab3  09             note A-1  (9)
+   $0ab4  09             note A-1  (9)
+   $0ab5  0c             note C-2  (12)
+   $0ab6  09             note A-1  (9)
+   $0ab7  10             note E-2  (16)
+   $0ab8  0e             note D-2  (14)
+   $0ab9  0c             note C-2  (12)
+   $0aba  09             note A-1  (9)
+   $0abb  09             note A-1  (9)
+   $0abc  09             note A-1  (9)
+   $0abd  0c             note C-2  (12)
+   $0abe  09             note A-1  (9)
+   $0abf  10             note E-2  (16)
+   $0ac0  0e             note D-2  (14)
+   $0ac1  0c             note C-2  (12)
+   $0ac2  09             note A-1  (9)
+   $0ac3  09             note A-1  (9)
+   $0ac4  09             note A-1  (9)
+   $0ac5  0c             note C-2  (12)
+   $0ac6  09             note A-1  (9)
+   $0ac7  10             note E-2  (16)
+   $0ac8  0e             note D-2  (14)
+   $0ac9  0c             note C-2  (12)
+   $0aca  09             note A-1  (9)
+   $0acb  09             note A-1  (9)
+   $0acc  09             note A-1  (9)
+   $0acd  0c             note C-2  (12)
+   $0ace  09             note A-1  (9)
+   $0acf  10             note E-2  (16)
+   $0ad0  0e             note D-2  (14)
+   $0ad1  0c             note C-2  (12)
+   $0ad2  09             note A-1  (9)
+   $0ad3  80             next pattern
+$0ad4:
+   $0ad4  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $0ad8  d7             inst 7
+   $0ad9  e1             dur  2
+   $0ada  09             note A-1  (9)
+   $0adb  09             note A-1  (9)
+   $0adc  09             note A-1  (9)
+   $0add  09             note A-1  (9)
+   $0ade  09             note A-1  (9)
+   $0adf  09             note A-1  (9)
+   $0ae0  09             note A-1  (9)
+   $0ae1  09             note A-1  (9)
+   $0ae2  10             note E-2  (16)
+   $0ae3  0e             note D-2  (14)
+   $0ae4  0c             note C-2  (12)
+   $0ae5  0b             note B-1  (11)
+   $0ae6  0c             note C-2  (12)
+   $0ae7  0b             note B-1  (11)
+   $0ae8  09             note A-1  (9)
+   $0ae9  07             note G-1  (7)
+   $0aea  09             note A-1  (9)
+   $0aeb  09             note A-1  (9)
+   $0aec  09             note A-1  (9)
+   $0aed  09             note A-1  (9)
+   $0aee  09             note A-1  (9)
+   $0aef  09             note A-1  (9)
+   $0af0  09             note A-1  (9)
+   $0af1  09             note A-1  (9)
+   $0af2  10             note E-2  (16)
+   $0af3  0e             note D-2  (14)
+   $0af4  0c             note C-2  (12)
+   $0af5  0b             note B-1  (11)
+   $0af6  0c             note C-2  (12)
+   $0af7  0b             note B-1  (11)
+   $0af8  09             note A-1  (9)
+   $0af9  07             note G-1  (7)
+   $0afa  80             next pattern
+$0afb:
+   $0afb  c6 14 1f 16    vol  6  attack +1 x4 every 1  decay -1 x15 every 6
+   $0aff  d7             inst 7
+   $0b00  84 01 11       release at row 1, -1 every 1
+   $0b03  88 00 01 02    vibrato delay 0 depth 1 speed 2
+   $0b07  e0             dur  1
+   $0b08  86             note off
+   $0b09  e1             dur  2
+   $0b0a  21             note A-3  (33)
+   $0b0b  1c             note E-3  (28)
+   $0b0c  1f             note G-3  (31)
+   $0b0d  1a             note D-3  (26)
+   $0b0e  1c             note E-3  (28)
+   $0b0f  13             note G-2  (19)
+   $0b10  f3             dur  20
+   $0b11  15             note A-2  (21)
+   $0b12  e1             dur  2
+   $0b13  21             note A-3  (33)
+   $0b14  1c             note E-3  (28)
+   $0b15  1f             note G-3  (31)
+   $0b16  1a             note D-3  (26)
+   $0b17  1c             note E-3  (28)
+   $0b18  13             note G-2  (19)
+   $0b19  f3             dur  20
+   $0b1a  15             note A-2  (21)
+   $0b1b  e1             dur  2
+   $0b1c  21             note A-3  (33)
+   $0b1d  1c             note E-3  (28)
+   $0b1e  1f             note G-3  (31)
+   $0b1f  1a             note D-3  (26)
+   $0b20  1c             note E-3  (28)
+   $0b21  13             note G-2  (19)
+   $0b22  15             note A-2  (21)
+   $0b23  85             rest
+   $0b24  21             note A-3  (33)
+   $0b25  1c             note E-3  (28)
+   $0b26  1f             note G-3  (31)
+   $0b27  1a             note D-3  (26)
+   $0b28  1c             note E-3  (28)
+   $0b29  13             note G-2  (19)
+   $0b2a  15             note A-2  (21)
+   $0b2b  85             rest
+   $0b2c  21             note A-3  (33)
+   $0b2d  1c             note E-3  (28)
+   $0b2e  1f             note G-3  (31)
+   $0b2f  1a             note D-3  (26)
+   $0b30  1c             note E-3  (28)
+   $0b31  13             note G-2  (19)
+   $0b32  15             note A-2  (21)
+   $0b33  85             rest
+   $0b34  21             note A-3  (33)
+   $0b35  1c             note E-3  (28)
+   $0b36  1f             note G-3  (31)
+   $0b37  1a             note D-3  (26)
+   $0b38  1c             note E-3  (28)
+   $0b39  13             note G-2  (19)
+   $0b3a  15             note A-2  (21)
+   $0b3b  e0             dur  1
+   $0b3c  86             note off
+   $0b3d  80             next pattern
+$0b3e:
+   $0b3e  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0b42  d7             inst 7
+   $0b43  e1             dur  2
+   $0b44  09             note A-1  (9)
+   $0b45  09             note A-1  (9)
+   $0b46  09             note A-1  (9)
+   $0b47  09             note A-1  (9)
+   $0b48  09             note A-1  (9)
+   $0b49  09             note A-1  (9)
+   $0b4a  09             note A-1  (9)
+   $0b4b  09             note A-1  (9)
+   $0b4c  10             note E-2  (16)
+   $0b4d  0e             note D-2  (14)
+   $0b4e  0c             note C-2  (12)
+   $0b4f  0b             note B-1  (11)
+   $0b50  0c             note C-2  (12)
+   $0b51  0b             note B-1  (11)
+   $0b52  09             note A-1  (9)
+   $0b53  07             note G-1  (7)
+   $0b54  09             note A-1  (9)
+   $0b55  09             note A-1  (9)
+   $0b56  09             note A-1  (9)
+   $0b57  09             note A-1  (9)
+   $0b58  09             note A-1  (9)
+   $0b59  09             note A-1  (9)
+   $0b5a  09             note A-1  (9)
+   $0b5b  09             note A-1  (9)
+   $0b5c  10             note E-2  (16)
+   $0b5d  0e             note D-2  (14)
+   $0b5e  0c             note C-2  (12)
+   $0b5f  0b             note B-1  (11)
+   $0b60  0c             note C-2  (12)
+   $0b61  0b             note B-1  (11)
+   $0b62  09             note A-1  (9)
+   $0b63  07             note G-1  (7)
+   $0b64  10             note E-2  (16)
+   $0b65  10             note E-2  (16)
+   $0b66  13             note G-2  (19)
+   $0b67  10             note E-2  (16)
+   $0b68  10             note E-2  (16)
+   $0b69  10             note E-2  (16)
+   $0b6a  0e             note D-2  (14)
+   $0b6b  10             note E-2  (16)
+   $0b6c  10             note E-2  (16)
+   $0b6d  10             note E-2  (16)
+   $0b6e  13             note G-2  (19)
+   $0b6f  10             note E-2  (16)
+   $0b70  10             note E-2  (16)
+   $0b71  10             note E-2  (16)
+   $0b72  0e             note D-2  (14)
+   $0b73  10             note E-2  (16)
+   $0b74  11             note F-2  (17)
+   $0b75  11             note F-2  (17)
+   $0b76  11             note F-2  (17)
+   $0b77  11             note F-2  (17)
+   $0b78  11             note F-2  (17)
+   $0b79  11             note F-2  (17)
+   $0b7a  11             note F-2  (17)
+   $0b7b  11             note F-2  (17)
+   $0b7c  13             note G-2  (19)
+   $0b7d  13             note G-2  (19)
+   $0b7e  13             note G-2  (19)
+   $0b7f  13             note G-2  (19)
+   $0b80  13             note G-2  (19)
+   $0b81  13             note G-2  (19)
+   $0b82  13             note G-2  (19)
+   $0b83  13             note G-2  (19)
+   $0b84  80             next pattern
+$0b85:
+   $0b85  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0b89  d7             inst 7
+   $0b8a  84 02 21       release at row 2, -1 every 2
+   $0b8d  e3             dur  4
+   $0b8e  8c 08 00 08    porta-on-release +8 x8
+   $0b92  15             note A-2  (21)
+   $0b93  bb             vol  11
+   $0b94  8c 08 00 08    porta-on-release +8 x8
+   $0b98  15             note A-2  (21)
+   $0b99  b9             vol  9
+   $0b9a  8c 08 00 08    porta-on-release +8 x8
+   $0b9e  15             note A-2  (21)
+   $0b9f  b6             vol  6
+   $0ba0  8c 08 00 08    porta-on-release +8 x8
+   $0ba4  15             note A-2  (21)
+   $0ba5  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0ba9  eb             dur  12
+   $0baa  86             note off
+   $0bab  8d             porta-on-release off
+   $0bac  e0             dur  1
+   $0bad  13             note G-2  (19)
+   $0bae  13             note G-2  (19)
+   $0baf  13             note G-2  (19)
+   $0bb0  13             note G-2  (19)
+   $0bb1  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0bb5  d7             inst 7
+   $0bb6  e3             dur  4
+   $0bb7  8c 08 00 08    porta-on-release +8 x8
+   $0bbb  15             note A-2  (21)
+   $0bbc  bb             vol  11
+   $0bbd  8c 08 00 08    porta-on-release +8 x8
+   $0bc1  15             note A-2  (21)
+   $0bc2  b9             vol  9
+   $0bc3  8c 08 00 08    porta-on-release +8 x8
+   $0bc7  15             note A-2  (21)
+   $0bc8  b6             vol  6
+   $0bc9  8c 08 00 08    porta-on-release +8 x8
+   $0bcd  15             note A-2  (21)
+   $0bce  ef             dur  16
+   $0bcf  86             note off
+   $0bd0  80             next pattern
+$0bd1:
+   $0bd1  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $0bd5  84 01 11       release at row 1, -1 every 1
+   $0bd8  d7             inst 7
+   $0bd9  87 00          transpose +0
+   $0bdb  f3             dur  20
+   $0bdc  86             note off
+   $0bdd  e1             dur  2
+   $0bde  18             note C-3  (24)
+   $0bdf  15             note A-2  (21)
+   $0be0  1c             note E-3  (28)
+   $0be1  1a             note D-3  (26)
+   $0be2  18             note C-3  (24)
+   $0be3  15             note A-2  (21)
+   $0be4  f3             dur  20
+   $0be5  86             note off
+   $0be6  e1             dur  2
+   $0be7  18             note C-3  (24)
+   $0be8  15             note A-2  (21)
+   $0be9  1c             note E-3  (28)
+   $0bea  1a             note D-3  (26)
+   $0beb  18             note C-3  (24)
+   $0bec  15             note A-2  (21)
+   $0bed  80             next pattern
+$0bee:
+   $0bee  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $0bf2  87 00          transpose +0
+   $0bf4  84 01 11       release at row 1, -1 every 1
+   $0bf7  e7             dur  8
+   $0bf8  d6             inst 6
+   $0bf9  1c             note E-3  (28)
+   $0bfa  d7             inst 7
+   $0bfb  cd 00 1f 13    vol  13  attack +0 x0 every 1  decay -1 x15 every 3
+   $0bff  e1             dur  2
+   $0c00  1c             note E-3  (28)
+   $0c01  1a             note D-3  (26)
+   $0c02  18             note C-3  (24)
+   $0c03  15             note A-2  (21)
+   $0c04  d3             inst 3
+   $0c05  09             note A-1  (9)
+   $0c06  09             note A-1  (9)
+   $0c07  09             note A-1  (9)
+   $0c08  09             note A-1  (9)
+   $0c09  d7             inst 7
+   $0c0a  1c             note E-3  (28)
+   $0c0b  1a             note D-3  (26)
+   $0c0c  18             note C-3  (24)
+   $0c0d  15             note A-2  (21)
+   $0c0e  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $0c12  e7             dur  8
+   $0c13  d6             inst 6
+   $0c14  1d             note F-3  (29)
+   $0c15  cd 00 1f 13    vol  13  attack +0 x0 every 1  decay -1 x15 every 3
+   $0c19  d7             inst 7
+   $0c1a  e1             dur  2
+   $0c1b  1c             note E-3  (28)
+   $0c1c  1a             note D-3  (26)
+   $0c1d  18             note C-3  (24)
+   $0c1e  15             note A-2  (21)
+   $0c1f  d3             inst 3
+   $0c20  09             note A-1  (9)
+   $0c21  09             note A-1  (9)
+   $0c22  09             note A-1  (9)
+   $0c23  09             note A-1  (9)
+   $0c24  d7             inst 7
+   $0c25  1c             note E-3  (28)
+   $0c26  1a             note D-3  (26)
+   $0c27  18             note C-3  (24)
+   $0c28  15             note A-2  (21)
+   $0c29  80             next pattern
+$0c2a:
+   $0c2a  cc 00 1f 11    vol  12  attack +0 x0 every 1  decay -1 x15 every 1
+   $0c2e  d7             inst 7
+   $0c2f  87 f4          transpose -12
+   $0c31  e0             dur  1
+   $0c32  a1             arp  table 1
+   $0c33  21             note A-3  (33)
+   $0c34  21             note A-3  (33)
+   $0c35  21             note A-3  (33)
+   $0c36  85             rest
+   $0c37  21             note A-3  (33)
+   $0c38  21             note A-3  (33)
+   $0c39  85             rest
+   $0c3a  21             note A-3  (33)
+   $0c3b  21             note A-3  (33)
+   $0c3c  21             note A-3  (33)
+   $0c3d  21             note A-3  (33)
+   $0c3e  85             rest
+   $0c3f  21             note A-3  (33)
+   $0c40  21             note A-3  (33)
+   $0c41  85             rest
+   $0c42  21             note A-3  (33)
+   $0c43  a2             arp  table 2
+   $0c44  21             note A-3  (33)
+   $0c45  21             note A-3  (33)
+   $0c46  21             note A-3  (33)
+   $0c47  85             rest
+   $0c48  21             note A-3  (33)
+   $0c49  21             note A-3  (33)
+   $0c4a  85             rest
+   $0c4b  21             note A-3  (33)
+   $0c4c  21             note A-3  (33)
+   $0c4d  21             note A-3  (33)
+   $0c4e  21             note A-3  (33)
+   $0c4f  85             rest
+   $0c50  21             note A-3  (33)
+   $0c51  21             note A-3  (33)
+   $0c52  85             rest
+   $0c53  21             note A-3  (33)
+   $0c54  a5             arp  table 5
+   $0c55  21             note A-3  (33)
+   $0c56  21             note A-3  (33)
+   $0c57  21             note A-3  (33)
+   $0c58  85             rest
+   $0c59  21             note A-3  (33)
+   $0c5a  21             note A-3  (33)
+   $0c5b  85             rest
+   $0c5c  21             note A-3  (33)
+   $0c5d  21             note A-3  (33)
+   $0c5e  21             note A-3  (33)
+   $0c5f  21             note A-3  (33)
+   $0c60  85             rest
+   $0c61  21             note A-3  (33)
+   $0c62  21             note A-3  (33)
+   $0c63  85             rest
+   $0c64  21             note A-3  (33)
+   $0c65  a3             arp  table 3
+   $0c66  21             note A-3  (33)
+   $0c67  21             note A-3  (33)
+   $0c68  21             note A-3  (33)
+   $0c69  85             rest
+   $0c6a  21             note A-3  (33)
+   $0c6b  21             note A-3  (33)
+   $0c6c  85             rest
+   $0c6d  21             note A-3  (33)
+   $0c6e  21             note A-3  (33)
+   $0c6f  21             note A-3  (33)
+   $0c70  21             note A-3  (33)
+   $0c71  85             rest
+   $0c72  21             note A-3  (33)
+   $0c73  21             note A-3  (33)
+   $0c74  85             rest
+   $0c75  21             note A-3  (33)
+   $0c76  80             next pattern
+$0c77:
+   $0c77  ca 14 1f 16    vol  10  attack +1 x4 every 1  decay -1 x15 every 6
+   $0c7b  d7             inst 7
+   $0c7c  87 00          transpose +0
+   $0c7e  84 01 11       release at row 1, -1 every 1
+   $0c81  88 00 01 02    vibrato delay 0 depth 1 speed 2
+   $0c85  e1             dur  2
+   $0c86  21             note A-3  (33)
+   $0c87  1c             note E-3  (28)
+   $0c88  1f             note G-3  (31)
+   $0c89  1a             note D-3  (26)
+   $0c8a  1c             note E-3  (28)
+   $0c8b  13             note G-2  (19)
+   $0c8c  f3             dur  20
+   $0c8d  15             note A-2  (21)
+   $0c8e  e1             dur  2
+   $0c8f  21             note A-3  (33)
+   $0c90  1c             note E-3  (28)
+   $0c91  1f             note G-3  (31)
+   $0c92  1a             note D-3  (26)
+   $0c93  1c             note E-3  (28)
+   $0c94  13             note G-2  (19)
+   $0c95  f3             dur  20
+   $0c96  15             note A-2  (21)
+   $0c97  e1             dur  2
+   $0c98  21             note A-3  (33)
+   $0c99  1c             note E-3  (28)
+   $0c9a  1f             note G-3  (31)
+   $0c9b  1a             note D-3  (26)
+   $0c9c  1c             note E-3  (28)
+   $0c9d  13             note G-2  (19)
+   $0c9e  15             note A-2  (21)
+   $0c9f  85             rest
+   $0ca0  21             note A-3  (33)
+   $0ca1  1c             note E-3  (28)
+   $0ca2  1f             note G-3  (31)
+   $0ca3  1a             note D-3  (26)
+   $0ca4  1c             note E-3  (28)
+   $0ca5  13             note G-2  (19)
+   $0ca6  15             note A-2  (21)
+   $0ca7  85             rest
+   $0ca8  21             note A-3  (33)
+   $0ca9  1c             note E-3  (28)
+   $0caa  1f             note G-3  (31)
+   $0cab  1a             note D-3  (26)
+   $0cac  1c             note E-3  (28)
+   $0cad  13             note G-2  (19)
+   $0cae  15             note A-2  (21)
+   $0caf  85             rest
+   $0cb0  21             note A-3  (33)
+   $0cb1  1c             note E-3  (28)
+   $0cb2  1f             note G-3  (31)
+   $0cb3  1a             note D-3  (26)
+   $0cb4  1c             note E-3  (28)
+   $0cb5  13             note G-2  (19)
+   $0cb6  15             note A-2  (21)
+   $0cb7  85             rest
+   $0cb8  80             next pattern
+$0cb9:
+   $0cb9  cd 00 1f 13    vol  13  attack +0 x0 every 1  decay -1 x15 every 3
+   $0cbd  d7             inst 7
+   $0cbe  ef             dur  16
+   $0cbf  86             note off
+   $0cc0  e1             dur  2
+   $0cc1  1c             note E-3  (28)
+   $0cc2  1a             note D-3  (26)
+   $0cc3  18             note C-3  (24)
+   $0cc4  17             note B-2  (23)
+   $0cc5  18             note C-3  (24)
+   $0cc6  17             note B-2  (23)
+   $0cc7  15             note A-2  (21)
+   $0cc8  13             note G-2  (19)
+   $0cc9  ef             dur  16
+   $0cca  86             note off
+   $0ccb  e1             dur  2
+   $0ccc  1c             note E-3  (28)
+   $0ccd  1a             note D-3  (26)
+   $0cce  18             note C-3  (24)
+   $0ccf  17             note B-2  (23)
+   $0cd0  18             note C-3  (24)
+   $0cd1  17             note B-2  (23)
+   $0cd2  15             note A-2  (21)
+   $0cd3  13             note G-2  (19)
+   $0cd4  87 0c          transpose +12
+   $0cd6  10             note E-2  (16)
+   $0cd7  10             note E-2  (16)
+   $0cd8  13             note G-2  (19)
+   $0cd9  10             note E-2  (16)
+   $0cda  10             note E-2  (16)
+   $0cdb  10             note E-2  (16)
+   $0cdc  0e             note D-2  (14)
+   $0cdd  10             note E-2  (16)
+   $0cde  10             note E-2  (16)
+   $0cdf  10             note E-2  (16)
+   $0ce0  13             note G-2  (19)
+   $0ce1  10             note E-2  (16)
+   $0ce2  10             note E-2  (16)
+   $0ce3  10             note E-2  (16)
+   $0ce4  0e             note D-2  (14)
+   $0ce5  10             note E-2  (16)
+   $0ce6  11             note F-2  (17)
+   $0ce7  11             note F-2  (17)
+   $0ce8  11             note F-2  (17)
+   $0ce9  11             note F-2  (17)
+   $0cea  11             note F-2  (17)
+   $0ceb  11             note F-2  (17)
+   $0cec  11             note F-2  (17)
+   $0ced  11             note F-2  (17)
+   $0cee  13             note G-2  (19)
+   $0cef  13             note G-2  (19)
+   $0cf0  13             note G-2  (19)
+   $0cf1  13             note G-2  (19)
+   $0cf2  13             note G-2  (19)
+   $0cf3  13             note G-2  (19)
+   $0cf4  13             note G-2  (19)
+   $0cf5  13             note G-2  (19)
+   $0cf6  80             next pattern
+$0cf7:
+   $0cf7  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0cfb  d7             inst 7
+   $0cfc  87 00          transpose +0
+   $0cfe  84 02 21       release at row 2, -1 every 2
+   $0d01  e3             dur  4
+   $0d02  8c 08 00 08    porta-on-release +8 x8
+   $0d06  09             note A-1  (9)
+   $0d07  bb             vol  11
+   $0d08  8c 08 00 08    porta-on-release +8 x8
+   $0d0c  09             note A-1  (9)
+   $0d0d  b9             vol  9
+   $0d0e  8c 08 00 08    porta-on-release +8 x8
+   $0d12  09             note A-1  (9)
+   $0d13  b6             vol  6
+   $0d14  8c 08 00 08    porta-on-release +8 x8
+   $0d18  09             note A-1  (9)
+   $0d19  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0d1d  eb             dur  12
+   $0d1e  86             note off
+   $0d1f  8d             porta-on-release off
+   $0d20  e0             dur  1
+   $0d21  07             note G-1  (7)
+   $0d22  07             note G-1  (7)
+   $0d23  07             note G-1  (7)
+   $0d24  07             note G-1  (7)
+   $0d25  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0d29  e3             dur  4
+   $0d2a  8c 08 00 08    porta-on-release +8 x8
+   $0d2e  09             note A-1  (9)
+   $0d2f  bb             vol  11
+   $0d30  8c 08 00 08    porta-on-release +8 x8
+   $0d34  09             note A-1  (9)
+   $0d35  b9             vol  9
+   $0d36  8c 08 00 08    porta-on-release +8 x8
+   $0d3a  09             note A-1  (9)
+   $0d3b  b6             vol  6
+   $0d3c  8c 08 00 08    porta-on-release +8 x8
+   $0d40  09             note A-1  (9)
+   $0d41  ef             dur  16
+   $0d42  86             note off
+   $0d43  80             next pattern
+$0d44:
+   $0d44  cd 00 1f 13    vol  13  attack +0 x0 every 1  decay -1 x15 every 3
+   $0d48  d7             inst 7
+   $0d49  87 f4          transpose -12
+   $0d4b  e0             dur  1
+   $0d4c  21             note A-3  (33)
+   $0d4d  23             note B-3  (35)
+   $0d4e  24             note ?36  (36)
+   $0d4f  85             rest
+   $0d50  21             note A-3  (33)
+   $0d51  23             note B-3  (35)
+   $0d52  24             note ?36  (36)
+   $0d53  85             rest
+   $0d54  ba             vol  10
+   $0d55  21             note A-3  (33)
+   $0d56  23             note B-3  (35)
+   $0d57  24             note ?36  (36)
+   $0d58  85             rest
+   $0d59  b9             vol  9
+   $0d5a  21             note A-3  (33)
+   $0d5b  23             note B-3  (35)
+   $0d5c  24             note ?36  (36)
+   $0d5d  85             rest
+   $0d5e  21             note A-3  (33)
+   $0d5f  23             note B-3  (35)
+   $0d60  24             note ?36  (36)
+   $0d61  85             rest
+   $0d62  bf             vol  15
+   $0d63  e1             dur  2
+   $0d64  18             note C-3  (24)
+   $0d65  15             note A-2  (21)
+   $0d66  1c             note E-3  (28)
+   $0d67  1a             note D-3  (26)
+   $0d68  18             note C-3  (24)
+   $0d69  15             note A-2  (21)
+   $0d6a  bd             vol  13
+   $0d6b  e0             dur  1
+   $0d6c  23             note B-3  (35)
+   $0d6d  24             note ?36  (36)
+   $0d6e  26             note ?38  (38)
+   $0d6f  85             rest
+   $0d70  23             note B-3  (35)
+   $0d71  24             note ?36  (36)
+   $0d72  26             note ?38  (38)
+   $0d73  85             rest
+   $0d74  ba             vol  10
+   $0d75  23             note B-3  (35)
+   $0d76  24             note ?36  (36)
+   $0d77  26             note ?38  (38)
+   $0d78  85             rest
+   $0d79  b9             vol  9
+   $0d7a  23             note B-3  (35)
+   $0d7b  24             note ?36  (36)
+   $0d7c  26             note ?38  (38)
+   $0d7d  85             rest
+   $0d7e  23             note B-3  (35)
+   $0d7f  24             note ?36  (36)
+   $0d80  26             note ?38  (38)
+   $0d81  85             rest
+   $0d82  bf             vol  15
+   $0d83  e1             dur  2
+   $0d84  18             note C-3  (24)
+   $0d85  15             note A-2  (21)
+   $0d86  1c             note E-3  (28)
+   $0d87  1a             note D-3  (26)
+   $0d88  18             note C-3  (24)
+   $0d89  15             note A-2  (21)
+   $0d8a  bd             vol  13
+   $0d8b  e0             dur  1
+   $0d8c  24             note ?36  (36)
+   $0d8d  26             note ?38  (38)
+   $0d8e  28             note ?40  (40)
+   $0d8f  85             rest
+   $0d90  24             note ?36  (36)
+   $0d91  26             note ?38  (38)
+   $0d92  28             note ?40  (40)
+   $0d93  85             rest
+   $0d94  ba             vol  10
+   $0d95  24             note ?36  (36)
+   $0d96  26             note ?38  (38)
+   $0d97  28             note ?40  (40)
+   $0d98  85             rest
+   $0d99  b9             vol  9
+   $0d9a  24             note ?36  (36)
+   $0d9b  26             note ?38  (38)
+   $0d9c  28             note ?40  (40)
+   $0d9d  85             rest
+   $0d9e  24             note ?36  (36)
+   $0d9f  26             note ?38  (38)
+   $0da0  28             note ?40  (40)
+   $0da1  85             rest
+   $0da2  bf             vol  15
+   $0da3  e1             dur  2
+   $0da4  18             note C-3  (24)
+   $0da5  15             note A-2  (21)
+   $0da6  1c             note E-3  (28)
+   $0da7  1a             note D-3  (26)
+   $0da8  18             note C-3  (24)
+   $0da9  15             note A-2  (21)
+   $0daa  bd             vol  13
+   $0dab  e0             dur  1
+   $0dac  26             note ?38  (38)
+   $0dad  28             note ?40  (40)
+   $0dae  29             note ?41  (41)
+   $0daf  85             rest
+   $0db0  26             note ?38  (38)
+   $0db1  28             note ?40  (40)
+   $0db2  29             note ?41  (41)
+   $0db3  85             rest
+   $0db4  ba             vol  10
+   $0db5  26             note ?38  (38)
+   $0db6  28             note ?40  (40)
+   $0db7  29             note ?41  (41)
+   $0db8  85             rest
+   $0db9  b9             vol  9
+   $0dba  26             note ?38  (38)
+   $0dbb  28             note ?40  (40)
+   $0dbc  29             note ?41  (41)
+   $0dbd  85             rest
+   $0dbe  26             note ?38  (38)
+   $0dbf  28             note ?40  (40)
+   $0dc0  29             note ?41  (41)
+   $0dc1  85             rest
+   $0dc2  bf             vol  15
+   $0dc3  e1             dur  2
+   $0dc4  18             note C-3  (24)
+   $0dc5  15             note A-2  (21)
+   $0dc6  1c             note E-3  (28)
+   $0dc7  1a             note D-3  (26)
+   $0dc8  18             note C-3  (24)
+   $0dc9  15             note A-2  (21)
+   $0dca  80             next pattern
+$0dcb:
+   $0dcb  cc 00 1f 11    vol  12  attack +0 x0 every 1  decay -1 x15 every 1
+   $0dcf  d7             inst 7
+   $0dd0  e0             dur  1
+   $0dd1  a1             arp  table 1
+   $0dd2  21             note A-3  (33)
+   $0dd3  21             note A-3  (33)
+   $0dd4  21             note A-3  (33)
+   $0dd5  21             note A-3  (33)
+   $0dd6  21             note A-3  (33)
+   $0dd7  21             note A-3  (33)
+   $0dd8  85             rest
+   $0dd9  21             note A-3  (33)
+   $0dda  21             note A-3  (33)
+   $0ddb  21             note A-3  (33)
+   $0ddc  85             rest
+   $0ddd  21             note A-3  (33)
+   $0dde  21             note A-3  (33)
+   $0ddf  21             note A-3  (33)
+   $0de0  85             rest
+   $0de1  21             note A-3  (33)
+   $0de2  a2             arp  table 2
+   $0de3  21             note A-3  (33)
+   $0de4  21             note A-3  (33)
+   $0de5  21             note A-3  (33)
+   $0de6  21             note A-3  (33)
+   $0de7  21             note A-3  (33)
+   $0de8  21             note A-3  (33)
+   $0de9  85             rest
+   $0dea  21             note A-3  (33)
+   $0deb  21             note A-3  (33)
+   $0dec  21             note A-3  (33)
+   $0ded  85             rest
+   $0dee  21             note A-3  (33)
+   $0def  21             note A-3  (33)
+   $0df0  21             note A-3  (33)
+   $0df1  85             rest
+   $0df2  21             note A-3  (33)
+   $0df3  a5             arp  table 5
+   $0df4  21             note A-3  (33)
+   $0df5  21             note A-3  (33)
+   $0df6  21             note A-3  (33)
+   $0df7  21             note A-3  (33)
+   $0df8  21             note A-3  (33)
+   $0df9  21             note A-3  (33)
+   $0dfa  85             rest
+   $0dfb  21             note A-3  (33)
+   $0dfc  21             note A-3  (33)
+   $0dfd  21             note A-3  (33)
+   $0dfe  85             rest
+   $0dff  21             note A-3  (33)
+   $0e00  21             note A-3  (33)
+   $0e01  21             note A-3  (33)
+   $0e02  85             rest
+   $0e03  21             note A-3  (33)
+   $0e04  a2             arp  table 2
+   $0e05  21             note A-3  (33)
+   $0e06  21             note A-3  (33)
+   $0e07  21             note A-3  (33)
+   $0e08  85             rest
+   $0e09  21             note A-3  (33)
+   $0e0a  21             note A-3  (33)
+   $0e0b  85             rest
+   $0e0c  21             note A-3  (33)
+   $0e0d  21             note A-3  (33)
+   $0e0e  21             note A-3  (33)
+   $0e0f  21             note A-3  (33)
+   $0e10  85             rest
+   $0e11  21             note A-3  (33)
+   $0e12  21             note A-3  (33)
+   $0e13  85             rest
+   $0e14  21             note A-3  (33)
+   $0e15  80             next pattern
+$0e16:
+   $0e16  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0e1a  84 01 11       release at row 1, -1 every 1
+   $0e1d  e3             dur  4
+   $0e1e  d1             inst 1
+   $0e1f  0c             note C-2  (12)
+   $0e20  d2             inst 2
+   $0e21  0c             note C-2  (12)
+   $0e22  d1             inst 1
+   $0e23  0c             note C-2  (12)
+   $0e24  d2             inst 2
+   $0e25  0c             note C-2  (12)
+   $0e26  d1             inst 1
+   $0e27  0c             note C-2  (12)
+   $0e28  d2             inst 2
+   $0e29  0c             note C-2  (12)
+   $0e2a  e1             dur  2
+   $0e2b  86             note off
+   $0e2c  d1             inst 1
+   $0e2d  0c             note C-2  (12)
+   $0e2e  e3             dur  4
+   $0e2f  d2             inst 2
+   $0e30  0c             note C-2  (12)
+   $0e31  e3             dur  4
+   $0e32  d1             inst 1
+   $0e33  0c             note C-2  (12)
+   $0e34  d2             inst 2
+   $0e35  0c             note C-2  (12)
+   $0e36  d1             inst 1
+   $0e37  0c             note C-2  (12)
+   $0e38  d2             inst 2
+   $0e39  0c             note C-2  (12)
+   $0e3a  d1             inst 1
+   $0e3b  0c             note C-2  (12)
+   $0e3c  d2             inst 2
+   $0e3d  0c             note C-2  (12)
+   $0e3e  e1             dur  2
+   $0e3f  86             note off
+   $0e40  d1             inst 1
+   $0e41  0c             note C-2  (12)
+   $0e42  e3             dur  4
+   $0e43  d2             inst 2
+   $0e44  0c             note C-2  (12)
+   $0e45  80             next pattern
+$0e46:
+   $0e46  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0e4a  84 01 11       release at row 1, -1 every 1
+   $0e4d  e7             dur  8
+   $0e4e  d1             inst 1
+   $0e4f  0c             note C-2  (12)
+   $0e50  0c             note C-2  (12)
+   $0e51  0c             note C-2  (12)
+   $0e52  e3             dur  4
+   $0e53  0c             note C-2  (12)
+   $0e54  d2             inst 2
+   $0e55  0c             note C-2  (12)
+   $0e56  e7             dur  8
+   $0e57  d1             inst 1
+   $0e58  0c             note C-2  (12)
+   $0e59  0c             note C-2  (12)
+   $0e5a  0c             note C-2  (12)
+   $0e5b  e3             dur  4
+   $0e5c  0c             note C-2  (12)
+   $0e5d  e0             dur  1
+   $0e5e  d2             inst 2
+   $0e5f  0c             note C-2  (12)
+   $0e60  0c             note C-2  (12)
+   $0e61  e1             dur  2
+   $0e62  0c             note C-2  (12)
+   $0e63  80             next pattern
+$0e64:
+   $0e64  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0e68  84 01 11       release at row 1, -1 every 1
+   $0e6b  e3             dur  4
+   $0e6c  d1             inst 1
+   $0e6d  0c             note C-2  (12)
+   $0e6e  e0             dur  1
+   $0e6f  d2             inst 2
+   $0e70  0c             note C-2  (12)
+   $0e71  0c             note C-2  (12)
+   $0e72  e1             dur  2
+   $0e73  0c             note C-2  (12)
+   $0e74  e3             dur  4
+   $0e75  d1             inst 1
+   $0e76  0c             note C-2  (12)
+   $0e77  d2             inst 2
+   $0e78  0c             note C-2  (12)
+   $0e79  e3             dur  4
+   $0e7a  d1             inst 1
+   $0e7b  0c             note C-2  (12)
+   $0e7c  e0             dur  1
+   $0e7d  d2             inst 2
+   $0e7e  0c             note C-2  (12)
+   $0e7f  0c             note C-2  (12)
+   $0e80  e1             dur  2
+   $0e81  0c             note C-2  (12)
+   $0e82  d1             inst 1
+   $0e83  86             note off
+   $0e84  0c             note C-2  (12)
+   $0e85  e3             dur  4
+   $0e86  d2             inst 2
+   $0e87  0c             note C-2  (12)
+   $0e88  e3             dur  4
+   $0e89  d1             inst 1
+   $0e8a  0c             note C-2  (12)
+   $0e8b  e0             dur  1
+   $0e8c  d2             inst 2
+   $0e8d  0c             note C-2  (12)
+   $0e8e  0c             note C-2  (12)
+   $0e8f  e1             dur  2
+   $0e90  0c             note C-2  (12)
+   $0e91  e3             dur  4
+   $0e92  d1             inst 1
+   $0e93  0c             note C-2  (12)
+   $0e94  d2             inst 2
+   $0e95  0c             note C-2  (12)
+   $0e96  e3             dur  4
+   $0e97  d1             inst 1
+   $0e98  0c             note C-2  (12)
+   $0e99  e0             dur  1
+   $0e9a  d2             inst 2
+   $0e9b  0c             note C-2  (12)
+   $0e9c  0c             note C-2  (12)
+   $0e9d  e1             dur  2
+   $0e9e  0c             note C-2  (12)
+   $0e9f  d1             inst 1
+   $0ea0  86             note off
+   $0ea1  0c             note C-2  (12)
+   $0ea2  e3             dur  4
+   $0ea3  d2             inst 2
+   $0ea4  0c             note C-2  (12)
+   $0ea5  80             next pattern
+$0e88:
+   $0e88  e3             dur  4
+   $0e89  d1             inst 1
+   $0e8a  0c             note C-2  (12)
+   $0e8b  e0             dur  1
+   $0e8c  d2             inst 2
+   $0e8d  0c             note C-2  (12)
+   $0e8e  0c             note C-2  (12)
+   $0e8f  e1             dur  2
+   $0e90  0c             note C-2  (12)
+   $0e91  e3             dur  4
+   $0e92  d1             inst 1
+   $0e93  0c             note C-2  (12)
+   $0e94  d2             inst 2
+   $0e95  0c             note C-2  (12)
+   $0e96  e3             dur  4
+   $0e97  d1             inst 1
+   $0e98  0c             note C-2  (12)
+   $0e99  e0             dur  1
+   $0e9a  d2             inst 2
+   $0e9b  0c             note C-2  (12)
+   $0e9c  0c             note C-2  (12)
+   $0e9d  e1             dur  2
+   $0e9e  0c             note C-2  (12)
+   $0e9f  d1             inst 1
+   $0ea0  86             note off
+   $0ea1  0c             note C-2  (12)
+   $0ea2  e3             dur  4
+   $0ea3  d2             inst 2
+   $0ea4  0c             note C-2  (12)
+   $0ea5  80             next pattern
+$0ea6:
+   $0ea6  cf 00 1f 12    vol  15  attack +0 x0 every 1  decay -1 x15 every 2
+   $0eaa  e3             dur  4
+   $0eab  d2             inst 2
+   $0eac  0c             note C-2  (12)
+   $0ead  0c             note C-2  (12)
+   $0eae  e1             dur  2
+   $0eaf  0c             note C-2  (12)
+   $0eb0  d1             inst 1
+   $0eb1  0c             note C-2  (12)
+   $0eb2  d2             inst 2
+   $0eb3  0c             note C-2  (12)
+   $0eb4  d1             inst 1
+   $0eb5  0c             note C-2  (12)
+   $0eb6  e3             dur  4
+   $0eb7  d2             inst 2
+   $0eb8  0c             note C-2  (12)
+   $0eb9  0c             note C-2  (12)
+   $0eba  e1             dur  2
+   $0ebb  0c             note C-2  (12)
+   $0ebc  d1             inst 1
+   $0ebd  0c             note C-2  (12)
+   $0ebe  d2             inst 2
+   $0ebf  0c             note C-2  (12)
+   $0ec0  d1             inst 1
+   $0ec1  0c             note C-2  (12)
+   $0ec2  80             next pattern
+$0ec3:
+   $0ec3  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0ec7  84 01 11       release at row 1, -1 every 1
+   $0eca  e3             dur  4
+   $0ecb  d1             inst 1
+   $0ecc  0c             note C-2  (12)
+   $0ecd  e0             dur  1
+   $0ece  d2             inst 2
+   $0ecf  0c             note C-2  (12)
+   $0ed0  0c             note C-2  (12)
+   $0ed1  e1             dur  2
+   $0ed2  0c             note C-2  (12)
+   $0ed3  e3             dur  4
+   $0ed4  d1             inst 1
+   $0ed5  0c             note C-2  (12)
+   $0ed6  d2             inst 2
+   $0ed7  0c             note C-2  (12)
+   $0ed8  e3             dur  4
+   $0ed9  d1             inst 1
+   $0eda  0c             note C-2  (12)
+   $0edb  e0             dur  1
+   $0edc  d2             inst 2
+   $0edd  0c             note C-2  (12)
+   $0ede  0c             note C-2  (12)
+   $0edf  e1             dur  2
+   $0ee0  0c             note C-2  (12)
+   $0ee1  d1             inst 1
+   $0ee2  86             note off
+   $0ee3  0c             note C-2  (12)
+   $0ee4  e3             dur  4
+   $0ee5  d2             inst 2
+   $0ee6  0c             note C-2  (12)
+   $0ee7  e3             dur  4
+   $0ee8  d1             inst 1
+   $0ee9  0c             note C-2  (12)
+   $0eea  e0             dur  1
+   $0eeb  d2             inst 2
+   $0eec  0c             note C-2  (12)
+   $0eed  0c             note C-2  (12)
+   $0eee  e1             dur  2
+   $0eef  0c             note C-2  (12)
+   $0ef0  e3             dur  4
+   $0ef1  d1             inst 1
+   $0ef2  0c             note C-2  (12)
+   $0ef3  d2             inst 2
+   $0ef4  0c             note C-2  (12)
+   $0ef5  e3             dur  4
+   $0ef6  d1             inst 1
+   $0ef7  0c             note C-2  (12)
+   $0ef8  e0             dur  1
+   $0ef9  d2             inst 2
+   $0efa  0c             note C-2  (12)
+   $0efb  0c             note C-2  (12)
+   $0efc  e1             dur  2
+   $0efd  0c             note C-2  (12)
+   $0efe  ba             vol  10
+   $0eff  e0             dur  1
+   $0f00  d2             inst 2
+   $0f01  0c             note C-2  (12)
+   $0f02  0c             note C-2  (12)
+   $0f03  bb             vol  11
+   $0f04  0c             note C-2  (12)
+   $0f05  0c             note C-2  (12)
+   $0f06  bc             vol  12
+   $0f07  0c             note C-2  (12)
+   $0f08  bd             vol  13
+   $0f09  0c             note C-2  (12)
+   $0f0a  be             vol  14
+   $0f0b  0c             note C-2  (12)
+   $0f0c  0c             note C-2  (12)
+   $0f0d  80             next pattern
+$0f0e:
+   $0f0e  c5 1a 00 f0    vol  5  attack +1 x10 every 15  decay -0 x0 every 0
+   $0f12  84 01 11       release at row 1, -1 every 1
+   $0f15  d4             inst 4
+   $0f16  ff             dur  32
+   $0f17  09             note A-1  (9)
+   $0f18  85             rest
+   $0f19  85             rest
+   $0f1a  85             rest
+   $0f1b  85             rest
+   $0f1c  85             rest
+   $0f1d  f7             dur  24
+   $0f1e  86             note off
+   $0f1f  cd 00 1f 13    vol  13  attack +0 x0 every 1  decay -1 x15 every 3
+   $0f23  d7             inst 7
+   $0f24  e1             dur  2
+   $0f25  1c             note E-3  (28)
+   $0f26  1a             note D-3  (26)
+   $0f27  18             note C-3  (24)
+   $0f28  15             note A-2  (21)
+   $0f29  f7             dur  24
+   $0f2a  86             note off
+   $0f2b  cd 00 1f 13    vol  13  attack +0 x0 every 1  decay -1 x15 every 3
+   $0f2f  d7             inst 7
+   $0f30  e1             dur  2
+   $0f31  1c             note E-3  (28)
+   $0f32  1a             note D-3  (26)
+   $0f33  18             note C-3  (24)
+   $0f34  15             note A-2  (21)
+   $0f35  80             next pattern
+$0f36:
+   $0f36  cb 00 00 00    vol  11  attack +0 x0 every 0  decay -0 x0 every 0
+   $0f3a  84 01 11       release at row 1, -1 every 1
+   $0f3d  d4             inst 4
+   $0f3e  ff             dur  32
+   $0f3f  09             note A-1  (9)
+   $0f40  85             rest
+   $0f41  85             rest
+   $0f42  85             rest
+   $0f43  85             rest
+   $0f44  85             rest
+   $0f45  80             next pattern
+$0f46:
+   $0f46  c4 00 00 00    vol  4  attack +0 x0 every 0  decay -0 x0 every 0
+   $0f4a  84 01 11       release at row 1, -1 every 1
+   $0f4d  da             inst 10
+   $0f4e  e1             dur  2
+   $0f4f  21             note A-3  (33)
+   $0f50  15             note A-2  (21)
+   $0f51  1c             note E-3  (28)
+   $0f52  15             note A-2  (21)
+   $0f53  21             note A-3  (33)
+   $0f54  15             note A-2  (21)
+   $0f55  1c             note E-3  (28)
+   $0f56  15             note A-2  (21)
+   $0f57  21             note A-3  (33)
+   $0f58  15             note A-2  (21)
+   $0f59  1c             note E-3  (28)
+   $0f5a  15             note A-2  (21)
+   $0f5b  21             note A-3  (33)
+   $0f5c  15             note A-2  (21)
+   $0f5d  1c             note E-3  (28)
+   $0f5e  15             note A-2  (21)
+   $0f5f  b6             vol  6
+   $0f60  21             note A-3  (33)
+   $0f61  15             note A-2  (21)
+   $0f62  1c             note E-3  (28)
+   $0f63  15             note A-2  (21)
+   $0f64  21             note A-3  (33)
+   $0f65  15             note A-2  (21)
+   $0f66  1c             note E-3  (28)
+   $0f67  15             note A-2  (21)
+   $0f68  b8             vol  8
+   $0f69  21             note A-3  (33)
+   $0f6a  15             note A-2  (21)
+   $0f6b  1c             note E-3  (28)
+   $0f6c  15             note A-2  (21)
+   $0f6d  21             note A-3  (33)
+   $0f6e  ba             vol  10
+   $0f6f  15             note A-2  (21)
+   $0f70  1c             note E-3  (28)
+   $0f71  15             note A-2  (21)
+   $0f72  bb             vol  11
+   $0f73  21             note A-3  (33)
+   $0f74  15             note A-2  (21)
+   $0f75  1c             note E-3  (28)
+   $0f76  15             note A-2  (21)
+   $0f77  21             note A-3  (33)
+   $0f78  15             note A-2  (21)
+   $0f79  1c             note E-3  (28)
+   $0f7a  15             note A-2  (21)
+   $0f7b  bd             vol  13
+   $0f7c  21             note A-3  (33)
+   $0f7d  15             note A-2  (21)
+   $0f7e  1c             note E-3  (28)
+   $0f7f  15             note A-2  (21)
+   $0f80  be             vol  14
+   $0f81  21             note A-3  (33)
+   $0f82  15             note A-2  (21)
+   $0f83  1c             note E-3  (28)
+   $0f84  15             note A-2  (21)
+   $0f85  bf             vol  15
+   $0f86  21             note A-3  (33)
+   $0f87  15             note A-2  (21)
+   $0f88  1c             note E-3  (28)
+   $0f89  15             note A-2  (21)
+   $0f8a  21             note A-3  (33)
+   $0f8b  15             note A-2  (21)
+   $0f8c  1c             note E-3  (28)
+   $0f8d  15             note A-2  (21)
+   $0f8e  21             note A-3  (33)
+   $0f8f  15             note A-2  (21)
+   $0f90  1c             note E-3  (28)
+   $0f91  15             note A-2  (21)
+   $0f92  21             note A-3  (33)
+   $0f93  15             note A-2  (21)
+   $0f94  1c             note E-3  (28)
+   $0f95  15             note A-2  (21)
+   $0f96  80             next pattern
+$0f97:
+   $0f97  cd 00 1f 13    vol  13  attack +0 x0 every 1  decay -1 x15 every 3
+   $0f9b  d3             inst 3
+   $0f9c  87 00          transpose +0
+   $0f9e  f7             dur  24
+   $0f9f  86             note off
+   $0fa0  e1             dur  2
+   $0fa1  10             note E-2  (16)
+   $0fa2  0e             note D-2  (14)
+   $0fa3  0c             note C-2  (12)
+   $0fa4  09             note A-1  (9)
+   $0fa5  f7             dur  24
+   $0fa6  86             note off
+   $0fa7  cd 00 1f 13    vol  13  attack +0 x0 every 1  decay -1 x15 every 3
+   $0fab  d3             inst 3
+   $0fac  e1             dur  2
+   $0fad  10             note E-2  (16)
+   $0fae  0e             note D-2  (14)
+   $0faf  0c             note C-2  (12)
+   $0fb0  09             note A-1  (9)
+   $0fb1  80             next pattern
+$0fb2:
+   $0fb2  c5 1a 00 41    vol  5  attack +1 x10 every 4  decay -0 x0 every 1
+   $0fb6  d4             inst 4
+   $0fb7  ff             dur  32
+   $0fb8  10             note E-2  (16)
+   $0fb9  85             rest
+   $0fba  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0fbe  d6             inst 6
+   $0fbf  e7             dur  8
+   $0fc0  1c             note E-3  (28)
+   $0fc1  d4             inst 4
+   $0fc2  f7             dur  24
+   $0fc3  10             note E-2  (16)
+   $0fc4  e7             dur  8
+   $0fc5  d6             inst 6
+   $0fc6  1c             note E-3  (28)
+   $0fc7  d4             inst 4
+   $0fc8  11             note F-2  (17)
+   $0fc9  ef             dur  16
+   $0fca  13             note G-2  (19)
+   $0fcb  80             next pattern
+$0fcc:
+   $0fcc  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0fd0  d4             inst 4
+   $0fd1  84 01 11       release at row 1, -1 every 1
+   $0fd4  ff             dur  32
+   $0fd5  09             note A-1  (9)
+   $0fd6  85             rest
+   $0fd7  80             next pattern
+$0fd8:
+   $0fd8  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $0fdc  e7             dur  8
+   $0fdd  d6             inst 6
+   $0fde  1c             note E-3  (28)
+   $0fdf  ca 00 1f 13    vol  10  attack +0 x0 every 1  decay -1 x15 every 3
+   $0fe3  d7             inst 7
+   $0fe4  87 f4          transpose -12
+   $0fe6  e0             dur  1
+   $0fe7  86             note off
+   $0fe8  21             note A-3  (33)
+   $0fe9  23             note B-3  (35)
+   $0fea  24             note ?36  (36)
+   $0feb  85             rest
+   $0fec  b9             vol  9
+   $0fed  21             note A-3  (33)
+   $0fee  23             note B-3  (35)
+   $0fef  24             note ?36  (36)
+   $0ff0  85             rest
+   $0ff1  21             note A-3  (33)
+   $0ff2  23             note B-3  (35)
+   $0ff3  24             note ?36  (36)
+   $0ff4  bd             vol  13
+   $0ff5  d3             inst 3
+   $0ff6  e1             dur  2
+   $0ff7  18             note C-3  (24)
+   $0ff8  15             note A-2  (21)
+   $0ff9  1c             note E-3  (28)
+   $0ffa  1a             note D-3  (26)
+   $0ffb  18             note C-3  (24)
+   $0ffc  15             note A-2  (21)
+   $0ffd  d7             inst 7
+   $0ffe  ca 00 1f 13    vol  10  attack +0 x0 every 1  decay -1 x15 every 3
+   $1002  ba             vol  10
+   $1003  e0             dur  1
+   $1004  86             note off
+   $1005  23             note B-3  (35)
+   $1006  24             note ?36  (36)
+   $1007  26             note ?38  (38)
+   $1008  85             rest
+   $1009  b9             vol  9
+   $100a  23             note B-3  (35)
+   $100b  24             note ?36  (36)
+   $100c  26             note ?38  (38)
+   $100d  85             rest
+   $100e  23             note B-3  (35)
+   $100f  24             note ?36  (36)
+   $1010  26             note ?38  (38)
+   $1011  85             rest
+   $1012  23             note B-3  (35)
+   $1013  24             note ?36  (36)
+   $1014  26             note ?38  (38)
+   $1015  85             rest
+   $1016  23             note B-3  (35)
+   $1017  24             note ?36  (36)
+   $1018  26             note ?38  (38)
+   $1019  bd             vol  13
+   $101a  d3             inst 3
+   $101b  e1             dur  2
+   $101c  18             note C-3  (24)
+   $101d  15             note A-2  (21)
+   $101e  1c             note E-3  (28)
+   $101f  1a             note D-3  (26)
+   $1020  18             note C-3  (24)
+   $1021  15             note A-2  (21)
+   $1022  d7             inst 7
+   $1023  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $1027  d6             inst 6
+   $1028  e7             dur  8
+   $1029  28             note ?40  (40)
+   $102a  ba             vol  10
+   $102b  ca 00 1f 13    vol  10  attack +0 x0 every 1  decay -1 x15 every 3
+   $102f  d7             inst 7
+   $1030  e0             dur  1
+   $1031  86             note off
+   $1032  24             note ?36  (36)
+   $1033  26             note ?38  (38)
+   $1034  28             note ?40  (40)
+   $1035  85             rest
+   $1036  b9             vol  9
+   $1037  24             note ?36  (36)
+   $1038  26             note ?38  (38)
+   $1039  28             note ?40  (40)
+   $103a  85             rest
+   $103b  24             note ?36  (36)
+   $103c  26             note ?38  (38)
+   $103d  28             note ?40  (40)
+   $103e  bd             vol  13
+   $103f  d3             inst 3
+   $1040  e1             dur  2
+   $1041  18             note C-3  (24)
+   $1042  15             note A-2  (21)
+   $1043  1c             note E-3  (28)
+   $1044  1a             note D-3  (26)
+   $1045  18             note C-3  (24)
+   $1046  15             note A-2  (21)
+   $1047  d7             inst 7
+   $1048  ba             vol  10
+   $1049  e0             dur  1
+   $104a  86             note off
+   $104b  26             note ?38  (38)
+   $104c  28             note ?40  (40)
+   $104d  29             note ?41  (41)
+   $104e  85             rest
+   $104f  26             note ?38  (38)
+   $1050  28             note ?40  (40)
+   $1051  29             note ?41  (41)
+   $1052  85             rest
+   $1053  26             note ?38  (38)
+   $1054  28             note ?40  (40)
+   $1055  29             note ?41  (41)
+   $1056  85             rest
+   $1057  b9             vol  9
+   $1058  26             note ?38  (38)
+   $1059  28             note ?40  (40)
+   $105a  29             note ?41  (41)
+   $105b  85             rest
+   $105c  26             note ?38  (38)
+   $105d  28             note ?40  (40)
+   $105e  29             note ?41  (41)
+   $105f  bd             vol  13
+   $1060  d3             inst 3
+   $1061  e1             dur  2
+   $1062  18             note C-3  (24)
+   $1063  15             note A-2  (21)
+   $1064  1c             note E-3  (28)
+   $1065  1a             note D-3  (26)
+   $1066  18             note C-3  (24)
+   $1067  15             note A-2  (21)
+   $1068  d7             inst 7
+   $1069  87 00          transpose +0
+   $106b  80             next pattern
+$106c:
+   $106c  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $1070  d6             inst 6
+   $1071  87 00          transpose +0
+   $1073  eb             dur  12
+   $1074  1c             note E-3  (28)
+   $1075  86             note off
+   $1076  cf 00 1f 13    vol  15  attack +0 x0 every 1  decay -1 x15 every 3
+   $107a  d7             inst 7
+   $107b  e1             dur  2
+   $107c  1c             note E-3  (28)
+   $107d  1a             note D-3  (26)
+   $107e  18             note C-3  (24)
+   $107f  15             note A-2  (21)
+   $1080  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $1084  eb             dur  12
+   $1085  d6             inst 6
+   $1086  1d             note F-3  (29)
+   $1087  1c             note E-3  (28)
+   $1088  cf 00 1f 13    vol  15  attack +0 x0 every 1  decay -1 x15 every 3
+   $108c  d7             inst 7
+   $108d  e1             dur  2
+   $108e  1c             note E-3  (28)
+   $108f  1a             note D-3  (26)
+   $1090  18             note C-3  (24)
+   $1091  15             note A-2  (21)
+   $1092  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $1096  d6             inst 6
+   $1097  87 00          transpose +0
+   $1099  e5             dur  6
+   $109a  86             note off
+   $109b  f1             dur  18
+   $109c  1c             note E-3  (28)
+   $109d  cf 00 1f 13    vol  15  attack +0 x0 every 1  decay -1 x15 every 3
+   $10a1  d7             inst 7
+   $10a2  e1             dur  2
+   $10a3  1c             note E-3  (28)
+   $10a4  1a             note D-3  (26)
+   $10a5  18             note C-3  (24)
+   $10a6  15             note A-2  (21)
+   $10a7  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $10ab  eb             dur  12
+   $10ac  d6             inst 6
+   $10ad  1d             note F-3  (29)
+   $10ae  1c             note E-3  (28)
+   $10af  cf 00 1f 13    vol  15  attack +0 x0 every 1  decay -1 x15 every 3
+   $10b3  d7             inst 7
+   $10b4  e1             dur  2
+   $10b5  1c             note E-3  (28)
+   $10b6  1a             note D-3  (26)
+   $10b7  18             note C-3  (24)
+   $10b8  15             note A-2  (21)
+   $10b9  87 00          transpose +0
+   $10bb  80             next pattern
+$10e4:
+   $10e4  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $10e8  84 01 11       release at row 1, -1 every 1
+   $10eb  d3             inst 3
+   $10ec  e1             dur  2
+   $10ed  0e             note D-2  (14)
+   $10ee  bc             vol  12
+   $10ef  0e             note D-2  (14)
+   $10f0  0e             note D-2  (14)
+   $10f1  0e             note D-2  (14)
+   $10f2  0e             note D-2  (14)
+   $10f3  0e             note D-2  (14)
+   $10f4  0e             note D-2  (14)
+   $10f5  0e             note D-2  (14)
+   $10f6  bd             vol  13
+   $10f7  0c             note C-2  (12)
+   $10f8  bc             vol  12
+   $10f9  0c             note C-2  (12)
+   $10fa  0c             note C-2  (12)
+   $10fb  0c             note C-2  (12)
+   $10fc  0c             note C-2  (12)
+   $10fd  0c             note C-2  (12)
+   $10fe  0c             note C-2  (12)
+   $10ff  0c             note C-2  (12)
+   $1100  bd             vol  13
+   $1101  0a             note A#1  (10)
+   $1102  bc             vol  12
+   $1103  0a             note A#1  (10)
+   $1104  0a             note A#1  (10)
+   $1105  0a             note A#1  (10)
+   $1106  0a             note A#1  (10)
+   $1107  0a             note A#1  (10)
+   $1108  0a             note A#1  (10)
+   $1109  0a             note A#1  (10)
+   $110a  bd             vol  13
+   $110b  07             note G-1  (7)
+   $110c  bc             vol  12
+   $110d  07             note G-1  (7)
+   $110e  bd             vol  13
+   $110f  07             note G-1  (7)
+   $1110  bc             vol  12
+   $1111  07             note G-1  (7)
+   $1112  bd             vol  13
+   $1113  09             note A-1  (9)
+   $1114  bc             vol  12
+   $1115  09             note A-1  (9)
+   $1116  bd             vol  13
+   $1117  09             note A-1  (9)
+   $1118  bc             vol  12
+   $1119  09             note A-1  (9)
+   $111a  bd             vol  13
+   $111b  0e             note D-2  (14)
+   $111c  bc             vol  12
+   $111d  0e             note D-2  (14)
+   $111e  0e             note D-2  (14)
+   $111f  0e             note D-2  (14)
+   $1120  0e             note D-2  (14)
+   $1121  0e             note D-2  (14)
+   $1122  0e             note D-2  (14)
+   $1123  0e             note D-2  (14)
+   $1124  bd             vol  13
+   $1125  0c             note C-2  (12)
+   $1126  bc             vol  12
+   $1127  0c             note C-2  (12)
+   $1128  0c             note C-2  (12)
+   $1129  0c             note C-2  (12)
+   $112a  0c             note C-2  (12)
+   $112b  0c             note C-2  (12)
+   $112c  0c             note C-2  (12)
+   $112d  0c             note C-2  (12)
+   $112e  bd             vol  13
+   $112f  0a             note A#1  (10)
+   $1130  bc             vol  12
+   $1131  0a             note A#1  (10)
+   $1132  0a             note A#1  (10)
+   $1133  0a             note A#1  (10)
+   $1134  0a             note A#1  (10)
+   $1135  0a             note A#1  (10)
+   $1136  0a             note A#1  (10)
+   $1137  0a             note A#1  (10)
+   $1138  bd             vol  13
+   $1139  07             note G-1  (7)
+   $113a  bc             vol  12
+   $113b  07             note G-1  (7)
+   $113c  bd             vol  13
+   $113d  07             note G-1  (7)
+   $113e  bc             vol  12
+   $113f  07             note G-1  (7)
+   $1140  bd             vol  13
+   $1141  09             note A-1  (9)
+   $1142  bc             vol  12
+   $1143  09             note A-1  (9)
+   $1144  bd             vol  13
+   $1145  09             note A-1  (9)
+   $1146  bc             vol  12
+   $1147  09             note A-1  (9)
+   $1148  80             next pattern
+$1149:
+   $1149  cc 11 11 11    vol  12  attack +1 x1 every 1  decay -1 x1 every 1
+   $114d  d7             inst 7
+   $114e  e7             dur  8
+   $114f  1a             note D-3  (26)
+   $1150  ba             vol  10
+   $1151  1a             note D-3  (26)
+   $1152  b9             vol  9
+   $1153  1a             note D-3  (26)
+   $1154  b7             vol  7
+   $1155  1a             note D-3  (26)
+   $1156  b5             vol  5
+   $1157  1a             note D-3  (26)
+   $1158  b4             vol  4
+   $1159  1a             note D-3  (26)
+   $115a  b3             vol  3
+   $115b  1a             note D-3  (26)
+   $115c  b2             vol  2
+   $115d  1a             note D-3  (26)
+   $115e  b1             vol  1
+   $115f  1a             note D-3  (26)
+   $1160  83             END
+$1161:
+   $1161  ce 11 12 11    vol  14  attack +1 x1 every 1  decay -1 x2 every 1
+   $1165  84 01 11       release at row 1, -1 every 1
+   $1168  d7             inst 7
+   $1169  e7             dur  8
+   $116a  88 04 01 02    vibrato delay 4 depth 1 speed 2
+   $116e  0e             note D-2  (14)
+   $116f  e1             dur  2
+   $1170  09             note A-1  (9)
+   $1171  0c             note C-2  (12)
+   $1172  0e             note D-2  (14)
+   $1173  11             note F-2  (17)
+   $1174  eb             dur  12
+   $1175  13             note G-2  (19)
+   $1176  e3             dur  4
+   $1177  18             note C-3  (24)
+   $1178  e7             dur  8
+   $1179  1a             note D-3  (26)
+   $117a  ba             vol  10
+   $117b  1a             note D-3  (26)
+   $117c  b8             vol  8
+   $117d  1a             note D-3  (26)
+   $117e  b6             vol  6
+   $117f  1a             note D-3  (26)
+   $1180  be             vol  14
+   $1181  e5             dur  6
+   $1182  11             note F-2  (17)
+   $1183  11             note F-2  (17)
+   $1184  eb             dur  12
+   $1185  11             note F-2  (17)
+   $1186  e1             dur  2
+   $1187  11             note F-2  (17)
+   $1188  10             note E-2  (16)
+   $1189  0e             note D-2  (14)
+   $118a  85             rest
+   $118b  ed             dur  14
+   $118c  16             note A#2  (22)
+   $118d  e0             dur  1
+   $118e  15             note A-2  (21)
+   $118f  16             note A#2  (22)
+   $1190  e7             dur  8
+   $1191  13             note G-2  (19)
+   $1192  bb             vol  11
+   $1193  13             note G-2  (19)
+   $1194  be             vol  14
+   $1195  e5             dur  6
+   $1196  16             note A#2  (22)
+   $1197  15             note A-2  (21)
+   $1198  e3             dur  4
+   $1199  13             note G-2  (19)
+   $119a  eb             dur  12
+   $119b  15             note A-2  (21)
+   $119c  e3             dur  4
+   $119d  13             note G-2  (19)
+   $119e  e7             dur  8
+   $119f  18             note C-3  (24)
+   $11a0  ba             vol  10
+   $11a1  18             note C-3  (24)
+   $11a2  b8             vol  8
+   $11a3  18             note C-3  (24)
+   $11a4  b6             vol  6
+   $11a5  18             note C-3  (24)
+   $11a6  be             vol  14
+   $11a7  e5             dur  6
+   $11a8  16             note A#2  (22)
+   $11a9  15             note A-2  (21)
+   $11aa  e3             dur  4
+   $11ab  13             note G-2  (19)
+   $11ac  e5             dur  6
+   $11ad  16             note A#2  (22)
+   $11ae  15             note A-2  (21)
+   $11af  e3             dur  4
+   $11b0  13             note G-2  (19)
+   $11b1  e7             dur  8
+   $11b2  1a             note D-3  (26)
+   $11b3  bc             vol  12
+   $11b4  1a             note D-3  (26)
+   $11b5  be             vol  14
+   $11b6  ed             dur  14
+   $11b7  16             note A#2  (22)
+   $11b8  e0             dur  1
+   $11b9  15             note A-2  (21)
+   $11ba  16             note A#2  (22)
+   $11bb  e7             dur  8
+   $11bc  15             note A-2  (21)
+   $11bd  ba             vol  10
+   $11be  15             note A-2  (21)
+   $11bf  b9             vol  9
+   $11c0  15             note A-2  (21)
+   $11c1  b7             vol  7
+   $11c2  15             note A-2  (21)
+   $11c3  b5             vol  5
+   $11c4  15             note A-2  (21)
+   $11c5  b4             vol  4
+   $11c6  15             note A-2  (21)
+   $11c7  b3             vol  3
+   $11c8  15             note A-2  (21)
+   $11c9  b2             vol  2
+   $11ca  15             note A-2  (21)
+   $11cb  b1             vol  1
+   $11cc  15             note A-2  (21)
+   $11cd  80             next pattern
+$11ce:
+   $11ce  c9 00 1f 13    vol  9  attack +0 x0 every 1  decay -1 x15 every 3
+   $11d2  da             inst 10
+   $11d3  84 01 11       release at row 1, -1 every 1
+   $11d6  e1             dur  2
+   $11d7  0e             note D-2  (14)
+   $11d8  15             note A-2  (21)
+   $11d9  1a             note D-3  (26)
+   $11da  15             note A-2  (21)
+   $11db  0e             note D-2  (14)
+   $11dc  15             note A-2  (21)
+   $11dd  1a             note D-3  (26)
+   $11de  15             note A-2  (21)
+   $11df  0c             note C-2  (12)
+   $11e0  13             note G-2  (19)
+   $11e1  18             note C-3  (24)
+   $11e2  13             note G-2  (19)
+   $11e3  0c             note C-2  (12)
+   $11e4  13             note G-2  (19)
+   $11e5  18             note C-3  (24)
+   $11e6  13             note G-2  (19)
+   $11e7  0a             note A#1  (10)
+   $11e8  11             note F-2  (17)
+   $11e9  16             note A#2  (22)
+   $11ea  11             note F-2  (17)
+   $11eb  0a             note A#1  (10)
+   $11ec  11             note F-2  (17)
+   $11ed  16             note A#2  (22)
+   $11ee  11             note F-2  (17)
+   $11ef  0c             note C-2  (12)
+   $11f0  13             note G-2  (19)
+   $11f1  18             note C-3  (24)
+   $11f2  13             note G-2  (19)
+   $11f3  0c             note C-2  (12)
+   $11f4  13             note G-2  (19)
+   $11f5  18             note C-3  (24)
+   $11f6  13             note G-2  (19)
+   $11f7  e1             dur  2
+   $11f8  0e             note D-2  (14)
+   $11f9  15             note A-2  (21)
+   $11fa  1a             note D-3  (26)
+   $11fb  15             note A-2  (21)
+   $11fc  0e             note D-2  (14)
+   $11fd  15             note A-2  (21)
+   $11fe  1a             note D-3  (26)
+   $11ff  15             note A-2  (21)
+   $1200  0c             note C-2  (12)
+   $1201  13             note G-2  (19)
+   $1202  18             note C-3  (24)
+   $1203  13             note G-2  (19)
+   $1204  0c             note C-2  (12)
+   $1205  13             note G-2  (19)
+   $1206  18             note C-3  (24)
+   $1207  13             note G-2  (19)
+   $1208  0a             note A#1  (10)
+   $1209  11             note F-2  (17)
+   $120a  16             note A#2  (22)
+   $120b  11             note F-2  (17)
+   $120c  0a             note A#1  (10)
+   $120d  11             note F-2  (17)
+   $120e  16             note A#2  (22)
+   $120f  11             note F-2  (17)
+   $1210  0c             note C-2  (12)
+   $1211  13             note G-2  (19)
+   $1212  18             note C-3  (24)
+   $1213  13             note G-2  (19)
+   $1214  0c             note C-2  (12)
+   $1215  13             note G-2  (19)
+   $1216  18             note C-3  (24)
+   $1217  13             note G-2  (19)
+   $1218  80             next pattern
+$1219:
+   $1219  cc 00 00 00    vol  12  attack +0 x0 every 0  decay -0 x0 every 0
+   $121d  84 01 11       release at row 1, -1 every 1
+   $1220  d7             inst 7
+   $1221  90             arp off
+   $1222  e7             dur  8
+   $1223  10             note E-2  (16)
+   $1224  ba             vol  10
+   $1225  10             note E-2  (16)
+   $1226  b9             vol  9
+   $1227  10             note E-2  (16)
+   $1228  b7             vol  7
+   $1229  10             note E-2  (16)
+   $122a  b5             vol  5
+   $122b  10             note E-2  (16)
+   $122c  b4             vol  4
+   $122d  10             note E-2  (16)
+   $122e  b3             vol  3
+   $122f  10             note E-2  (16)
+   $1230  b2             vol  2
+   $1231  10             note E-2  (16)
+   $1232  b1             vol  1
+   $1233  10             note E-2  (16)
+   $1234  80             next pattern
+$1235:
+   $1235  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $1239  84 01 11       release at row 1, -1 every 1
+   $123c  e7             dur  8
+   $123d  d6             inst 6
+   $123e  1c             note E-3  (28)
+   $123f  bf             vol  15
+   $1240  d2             inst 2
+   $1241  0c             note C-2  (12)
+   $1242  d1             inst 1
+   $1243  0c             note C-2  (12)
+   $1244  d2             inst 2
+   $1245  0c             note C-2  (12)
+   $1246  d1             inst 1
+   $1247  0c             note C-2  (12)
+   $1248  d2             inst 2
+   $1249  0c             note C-2  (12)
+   $124a  d1             inst 1
+   $124b  0c             note C-2  (12)
+   $124c  d2             inst 2
+   $124d  0c             note C-2  (12)
+   $124e  d1             inst 1
+   $124f  0c             note C-2  (12)
+   $1250  d2             inst 2
+   $1251  0c             note C-2  (12)
+   $1252  d1             inst 1
+   $1253  0c             note C-2  (12)
+   $1254  d2             inst 2
+   $1255  0c             note C-2  (12)
+   $1256  d1             inst 1
+   $1257  0c             note C-2  (12)
+   $1258  d2             inst 2
+   $1259  0c             note C-2  (12)
+   $125a  d1             inst 1
+   $125b  0c             note C-2  (12)
+   $125c  e1             dur  2
+   $125d  d2             inst 2
+   $125e  0c             note C-2  (12)
+   $125f  0c             note C-2  (12)
+   $1260  0c             note C-2  (12)
+   $1261  0c             note C-2  (12)
+   $1262  e7             dur  8
+   $1263  d6             inst 6
+   $1264  1c             note E-3  (28)
+   $1265  bf             vol  15
+   $1266  d2             inst 2
+   $1267  0c             note C-2  (12)
+   $1268  d1             inst 1
+   $1269  0c             note C-2  (12)
+   $126a  d2             inst 2
+   $126b  0c             note C-2  (12)
+   $126c  d1             inst 1
+   $126d  0c             note C-2  (12)
+   $126e  d2             inst 2
+   $126f  0c             note C-2  (12)
+   $1270  d1             inst 1
+   $1271  0c             note C-2  (12)
+   $1272  d2             inst 2
+   $1273  0c             note C-2  (12)
+   $1274  d1             inst 1
+   $1275  0c             note C-2  (12)
+   $1276  d2             inst 2
+   $1277  0c             note C-2  (12)
+   $1278  d1             inst 1
+   $1279  0c             note C-2  (12)
+   $127a  d2             inst 2
+   $127b  0c             note C-2  (12)
+   $127c  d1             inst 1
+   $127d  0c             note C-2  (12)
+   $127e  d2             inst 2
+   $127f  0c             note C-2  (12)
+   $1280  e3             dur  4
+   $1281  0c             note C-2  (12)
+   $1282  d1             inst 1
+   $1283  e1             dur  2
+   $1284  0c             note C-2  (12)
+   $1285  e3             dur  4
+   $1286  d2             inst 2
+   $1287  0c             note C-2  (12)
+   $1288  e1             dur  2
+   $1289  d1             inst 1
+   $128a  0c             note C-2  (12)
+   $128b  e3             dur  4
+   $128c  d2             inst 2
+   $128d  0c             note C-2  (12)
+   $128e  d7             inst 7
+   $128f  e7             dur  8
+   $1290  0e             note D-2  (14)
+   $1291  ba             vol  10
+   $1292  0e             note D-2  (14)
+   $1293  b9             vol  9
+   $1294  0e             note D-2  (14)
+   $1295  b7             vol  7
+   $1296  0e             note D-2  (14)
+   $1297  b5             vol  5
+   $1298  0e             note D-2  (14)
+   $1299  b4             vol  4
+   $129a  0e             note D-2  (14)
+   $129b  b3             vol  3
+   $129c  0e             note D-2  (14)
+   $129d  b2             vol  2
+   $129e  0e             note D-2  (14)
+   $129f  b1             vol  1
+   $12a0  0e             note D-2  (14)
+   $12a1  80             next pattern
+$12aa:
+   $12aa  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $12ae  84 01 11       release at row 1, -1 every 1
+   $12b1  d7             inst 7
+   $12b2  87 f4          transpose -12
+   $12b4  e5             dur  6
+   $12b5  2d             note ?45  (45)
+   $12b6  e1             dur  2
+   $12b7  2b             note ?43  (43)
+   $12b8  86             note off
+   $12b9  e5             dur  6
+   $12ba  29             note ?41  (41)
+   $12bb  e1             dur  2
+   $12bc  2b             note ?43  (43)
+   $12bd  2b             note ?43  (43)
+   $12be  85             rest
+   $12bf  e5             dur  6
+   $12c0  29             note ?41  (41)
+   $12c1  e3             dur  4
+   $12c2  1f             note G-3  (31)
+   $12c3  ef             dur  16
+   $12c4  21             note A-3  (33)
+   $12c5  86             note off
+   $12c6  86             note off
+   $12c7  80             next pattern
+$12c8:
+   $12c8  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $12cc  84 01 11       release at row 1, -1 every 1
+   $12cf  d7             inst 7
+   $12d0  87 f4          transpose -12
+   $12d2  e5             dur  6
+   $12d3  26             note ?38  (38)
+   $12d4  e1             dur  2
+   $12d5  26             note ?38  (38)
+   $12d6  86             note off
+   $12d7  e5             dur  6
+   $12d8  26             note ?38  (38)
+   $12d9  e1             dur  2
+   $12da  24             note ?36  (36)
+   $12db  24             note ?36  (36)
+   $12dc  85             rest
+   $12dd  e5             dur  6
+   $12de  24             note ?36  (36)
+   $12df  e3             dur  4
+   $12e0  18             note C-3  (24)
+   $12e1  ef             dur  16
+   $12e2  1a             note D-3  (26)
+   $12e3  86             note off
+   $12e4  86             note off
+   $12e5  80             next pattern
+$12e6:
+   $12e6  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $12ea  84 01 11       release at row 1, -1 every 1
+   $12ed  d3             inst 3
+   $12ee  e3             dur  4
+   $12ef  0e             note D-2  (14)
+   $12f0  e1             dur  2
+   $12f1  0e             note D-2  (14)
+   $12f2  0e             note D-2  (14)
+   $12f3  e3             dur  4
+   $12f4  0e             note D-2  (14)
+   $12f5  e1             dur  2
+   $12f6  1a             note D-3  (26)
+   $12f7  0e             note D-2  (14)
+   $12f8  e3             dur  4
+   $12f9  0c             note C-2  (12)
+   $12fa  e1             dur  2
+   $12fb  18             note C-3  (24)
+   $12fc  0c             note C-2  (12)
+   $12fd  e3             dur  4
+   $12fe  0c             note C-2  (12)
+   $12ff  cc 00 00 00    vol  12  attack +0 x0 every 0  decay -0 x0 every 0
+   $1303  d4             inst 4
+   $1304  84 10 61       release at row 16, -1 every 6
+   $1307  f7             dur  24
+   $1308  0e             note D-2  (14)
+   $1309  85             rest
+   $130a  83             END
+$130b:
+   $130b  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $130f  84 01 11       release at row 1, -1 every 1
+   $1312  e7             dur  8
+   $1313  d6             inst 6
+   $1314  1c             note E-3  (28)
+   $1315  bf             vol  15
+   $1316  d2             inst 2
+   $1317  0c             note C-2  (12)
+   $1318  e3             dur  4
+   $1319  d1             inst 1
+   $131a  0c             note C-2  (12)
+   $131b  e1             dur  2
+   $131c  0c             note C-2  (12)
+   $131d  d5             inst 5
+   $131e  e1             dur  2
+   $131f  13             note G-2  (19)
+   $1320  10             note E-2  (16)
+   $1321  10             note E-2  (16)
+   $1322  0c             note C-2  (12)
+   $1323  0a             note A#1  (10)
+   $1324  ca 00 00 00    vol  10  attack +0 x0 every 0  decay -0 x0 every 0
+   $1328  d4             inst 4
+   $1329  84 10 61       release at row 16, -1 every 6
+   $132c  f7             dur  24
+   $132d  0e             note D-2  (14)
+   $132e  85             rest
+   $132f  80             next pattern
+$1338:
+   $1338  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $133c  84 01 11       release at row 1, -1 every 1
+   $133f  d3             inst 3
+   $1340  e3             dur  4
+   $1341  09             note A-1  (9)
+   $1342  e1             dur  2
+   $1343  09             note A-1  (9)
+   $1344  09             note A-1  (9)
+   $1345  e3             dur  4
+   $1346  09             note A-1  (9)
+   $1347  e0             dur  1
+   $1348  09             note A-1  (9)
+   $1349  09             note A-1  (9)
+   $134a  e1             dur  2
+   $134b  09             note A-1  (9)
+   $134c  e3             dur  4
+   $134d  09             note A-1  (9)
+   $134e  e1             dur  2
+   $134f  09             note A-1  (9)
+   $1350  09             note A-1  (9)
+   $1351  e3             dur  4
+   $1352  09             note A-1  (9)
+   $1353  e0             dur  1
+   $1354  09             note A-1  (9)
+   $1355  09             note A-1  (9)
+   $1356  e1             dur  2
+   $1357  09             note A-1  (9)
+   $1358  e3             dur  4
+   $1359  09             note A-1  (9)
+   $135a  e1             dur  2
+   $135b  09             note A-1  (9)
+   $135c  09             note A-1  (9)
+   $135d  09             note A-1  (9)
+   $135e  09             note A-1  (9)
+   $135f  09             note A-1  (9)
+   $1360  09             note A-1  (9)
+   $1361  e3             dur  4
+   $1362  09             note A-1  (9)
+   $1363  ff             dur  32
+   $1364  86             note off
+   $1365  80             next pattern
+$1366:
+   $1366  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $136a  84 01 11       release at row 1, -1 every 1
+   $136d  d7             inst 7
+   $136e  e1             dur  2
+   $136f  15             note A-2  (21)
+   $1370  17             note B-2  (23)
+   $1371  18             note C-3  (24)
+   $1372  17             note B-2  (23)
+   $1373  e3             dur  4
+   $1374  13             note G-2  (19)
+   $1375  e1             dur  2
+   $1376  10             note E-2  (16)
+   $1377  e7             dur  8
+   $1378  1a             note D-3  (26)
+   $1379  e9             dur  10
+   $137a  1c             note E-3  (28)
+   $137b  84 04 11       release at row 4, -1 every 1
+   $137e  8c 0f 00 08    porta-on-release +15 x8
+   $1382  e3             dur  4
+   $1383  bc             vol  12
+   $1384  15             note A-2  (21)
+   $1385  b8             vol  8
+   $1386  15             note A-2  (21)
+   $1387  b7             vol  7
+   $1388  15             note A-2  (21)
+   $1389  b5             vol  5
+   $138a  15             note A-2  (21)
+   $138b  83             END
+$138c:
+   $138c  ca 00 00 00    vol  10  attack +0 x0 every 0  decay -0 x0 every 0
+   $1390  84 01 11       release at row 1, -1 every 1
+   $1393  d7             inst 7
+   $1394  e1             dur  2
+   $1395  86             note off
+   $1396  15             note A-2  (21)
+   $1397  17             note B-2  (23)
+   $1398  18             note C-3  (24)
+   $1399  17             note B-2  (23)
+   $139a  e3             dur  4
+   $139b  13             note G-2  (19)
+   $139c  e1             dur  2
+   $139d  10             note E-2  (16)
+   $139e  e7             dur  8
+   $139f  1a             note D-3  (26)
+   $13a0  e9             dur  10
+   $13a1  1c             note E-3  (28)
+   $13a2  e3             dur  4
+   $13a3  10             note E-2  (16)
+   $13a4  b8             vol  8
+   $13a5  10             note E-2  (16)
+   $13a6  b7             vol  7
+   $13a7  10             note E-2  (16)
+   $13a8  b5             vol  5
+   $13a9  10             note E-2  (16)
+   $13aa  83             END
+$13ab:
+   $13ab  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $13af  84 01 11       release at row 1, -1 every 1
+   $13b2  d5             inst 5
+   $13b3  e1             dur  2
+   $13b4  13             note G-2  (19)
+   $13b5  13             note G-2  (19)
+   $13b6  13             note G-2  (19)
+   $13b7  e5             dur  6
+   $13b8  11             note F-2  (17)
+   $13b9  e3             dur  4
+   $13ba  0c             note C-2  (12)
+   $13bb  e5             dur  6
+   $13bc  13             note G-2  (19)
+   $13bd  11             note F-2  (17)
+   $13be  e3             dur  4
+   $13bf  0c             note C-2  (12)
+   $13c0  f7             dur  24
+   $13c1  bc             vol  12
+   $13c2  d6             inst 6
+   $13c3  1c             note E-3  (28)
+   $13c4  80             next pattern
+$13d8:
+   $13d8  cb 00 00 00    vol  11  attack +0 x0 every 0  decay -0 x0 every 0
+   $13dc  d4             inst 4
+   $13dd  84 18 91       release at row 24, -1 every 9
+   $13e0  ff             dur  32
+   $13e1  0e             note D-2  (14)
+   $13e2  85             rest
+   $13e3  85             rest
+   $13e4  85             rest
+   $13e5  0c             note C-2  (12)
+   $13e6  85             rest
+   $13e7  85             rest
+   $13e8  85             rest
+   $13e9  07             note G-1  (7)
+   $13ea  85             rest
+   $13eb  85             rest
+   $13ec  85             rest
+   $13ed  0e             note D-2  (14)
+   $13ee  85             rest
+   $13ef  85             rest
+   $13f0  85             rest
+   $13f1  80             next pattern
+$13f2:
+   $13f2  cc 00 1f 13    vol  12  attack +0 x0 every 1  decay -1 x15 every 3
+   $13f6  da             inst 10
+   $13f7  84 01 11       release at row 1, -1 every 1
+   $13fa  e7             dur  8
+   $13fb  0e             note D-2  (14)
+   $13fc  13             note G-2  (19)
+   $13fd  15             note A-2  (21)
+   $13fe  1a             note D-3  (26)
+   $13ff  1c             note E-3  (28)
+   $1400  1a             note D-3  (26)
+   $1401  15             note A-2  (21)
+   $1402  13             note G-2  (19)
+   $1403  0e             note D-2  (14)
+   $1404  13             note G-2  (19)
+   $1405  15             note A-2  (21)
+   $1406  1a             note D-3  (26)
+   $1407  1c             note E-3  (28)
+   $1408  1a             note D-3  (26)
+   $1409  15             note A-2  (21)
+   $140a  13             note G-2  (19)
+   $140b  0e             note D-2  (14)
+   $140c  13             note G-2  (19)
+   $140d  15             note A-2  (21)
+   $140e  1a             note D-3  (26)
+   $140f  1c             note E-3  (28)
+   $1410  1a             note D-3  (26)
+   $1411  15             note A-2  (21)
+   $1412  13             note G-2  (19)
+   $1413  0e             note D-2  (14)
+   $1414  13             note G-2  (19)
+   $1415  15             note A-2  (21)
+   $1416  1a             note D-3  (26)
+   $1417  1c             note E-3  (28)
+   $1418  1a             note D-3  (26)
+   $1419  15             note A-2  (21)
+   $141a  13             note G-2  (19)
+   $141b  80             next pattern
+$141c:
+   $141c  c9 00 1f 13    vol  9  attack +0 x0 every 1  decay -1 x15 every 3
+   $1420  da             inst 10
+   $1421  84 01 11       release at row 1, -1 every 1
+   $1424  e5             dur  6
+   $1425  86             note off
+   $1426  e7             dur  8
+   $1427  0e             note D-2  (14)
+   $1428  13             note G-2  (19)
+   $1429  15             note A-2  (21)
+   $142a  1a             note D-3  (26)
+   $142b  1c             note E-3  (28)
+   $142c  1a             note D-3  (26)
+   $142d  15             note A-2  (21)
+   $142e  13             note G-2  (19)
+   $142f  0e             note D-2  (14)
+   $1430  13             note G-2  (19)
+   $1431  15             note A-2  (21)
+   $1432  1a             note D-3  (26)
+   $1433  1c             note E-3  (28)
+   $1434  1a             note D-3  (26)
+   $1435  15             note A-2  (21)
+   $1436  13             note G-2  (19)
+   $1437  0e             note D-2  (14)
+   $1438  13             note G-2  (19)
+   $1439  15             note A-2  (21)
+   $143a  1a             note D-3  (26)
+   $143b  1c             note E-3  (28)
+   $143c  1a             note D-3  (26)
+   $143d  15             note A-2  (21)
+   $143e  13             note G-2  (19)
+   $143f  0e             note D-2  (14)
+   $1440  13             note G-2  (19)
+   $1441  15             note A-2  (21)
+   $1442  1a             note D-3  (26)
+   $1443  1c             note E-3  (28)
+   $1444  1a             note D-3  (26)
+   $1445  15             note A-2  (21)
+   $1446  e1             dur  2
+   $1447  86             note off
+   $1448  80             next pattern
+$145a:
+   $145a  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $145e  84 01 11       release at row 1, -1 every 1
+   $1461  d3             inst 3
+   $1462  84 01 11       release at row 1, -1 every 1
+   $1465  e1             dur  2
+   $1466  09             note A-1  (9)
+   $1467  09             note A-1  (9)
+   $1468  85             rest
+   $1469  09             note A-1  (9)
+   $146a  85             rest
+   $146b  09             note A-1  (9)
+   $146c  85             rest
+   $146d  09             note A-1  (9)
+   $146e  09             note A-1  (9)
+   $146f  09             note A-1  (9)
+   $1470  85             rest
+   $1471  15             note A-2  (21)
+   $1472  07             note G-1  (7)
+   $1473  07             note G-1  (7)
+   $1474  85             rest
+   $1475  07             note G-1  (7)
+   $1476  85             rest
+   $1477  07             note G-1  (7)
+   $1478  85             rest
+   $1479  07             note G-1  (7)
+   $147a  07             note G-1  (7)
+   $147b  07             note G-1  (7)
+   $147c  85             rest
+   $147d  13             note G-2  (19)
+   $147e  85             rest
+   $147f  07             note G-1  (7)
+   $1480  85             rest
+   $1481  07             note G-1  (7)
+   $1482  80             next pattern
+$1483:
+   $1483  ca 22 12 12    vol  10  attack +2 x2 every 1  decay -1 x2 every 2
+   $1487  88 08 02 02    vibrato delay 8 depth 2 speed 2
+   $148b  84 02 11       release at row 2, -1 every 1
+   $148e  8c 0a 00 08    porta-on-release +10 x8
+   $1492  d7             inst 7
+   $1493  e7             dur  8
+   $1494  15             note A-2  (21)
+   $1495  86             note off
+   $1496  ff             dur  32
+   $1497  86             note off
+   $1498  80             next pattern
+$1499:
+   $1499  ce 00 00 00    vol  14  attack +0 x0 every 0  decay -0 x0 every 0
+   $149d  84 01 11       release at row 1, -1 every 1
+   $14a0  d7             inst 7
+   $14a1  e1             dur  2
+   $14a2  18             note C-3  (24)
+   $14a3  17             note B-2  (23)
+   $14a4  8c 0f 00 04    porta-on-release +15 x4
+   $14a8  e3             dur  4
+   $14a9  15             note A-2  (21)
+   $14aa  bb             vol  11
+   $14ab  15             note A-2  (21)
+   $14ac  8d             porta-on-release off
+   $14ad  b8             vol  8
+   $14ae  15             note A-2  (21)
+   $14af  b5             vol  5
+   $14b0  15             note A-2  (21)
+   $14b1  e1             dur  2
+   $14b2  86             note off
+   $14b3  be             vol  14
+   $14b4  1c             note E-3  (28)
+   $14b5  e3             dur  4
+   $14b6  1f             note G-3  (31)
+   $14b7  bc             vol  12
+   $14b8  1f             note G-3  (31)
+   $14b9  bb             vol  11
+   $14ba  1f             note G-3  (31)
+   $14bb  b9             vol  9
+   $14bc  1f             note G-3  (31)
+   $14bd  b7             vol  7
+   $14be  1f             note G-3  (31)
+   $14bf  b3             vol  3
+   $14c0  1f             note G-3  (31)
+   $14c1  b2             vol  2
+   $14c2  1f             note G-3  (31)
+   $14c3  be             vol  14
+   $14c4  e3             dur  4
+   $14c5  1a             note D-3  (26)
+   $14c6  e5             dur  6
+   $14c7  18             note C-3  (24)
+   $14c8  17             note B-2  (23)
+   $14c9  15             note A-2  (21)
+   $14ca  10             note E-2  (16)
+   $14cb  e1             dur  2
+   $14cc  21             note A-3  (33)
+   $14cd  8c 0f 00 04    porta-on-release +15 x4
+   $14d1  e3             dur  4
+   $14d2  1f             note G-3  (31)
+   $14d3  bc             vol  12
+   $14d4  8d             porta-on-release off
+   $14d5  1f             note G-3  (31)
+   $14d6  bb             vol  11
+   $14d7  1f             note G-3  (31)
+   $14d8  b9             vol  9
+   $14d9  1f             note G-3  (31)
+   $14da  b7             vol  7
+   $14db  1f             note G-3  (31)
+   $14dc  b3             vol  3
+   $14dd  1f             note G-3  (31)
+   $14de  e1             dur  2
+   $14df  86             note off
+   $14e0  be             vol  14
+   $14e1  e3             dur  4
+   $14e2  1f             note G-3  (31)
+   $14e3  84 02 11       release at row 2, -1 every 1
+   $14e6  8c 0a 00 08    porta-on-release +10 x8
+   $14ea  e0             dur  1
+   $14eb  86             note off
+   $14ec  e7             dur  8
+   $14ed  15             note A-2  (21)
+   $14ee  86             note off
+   $14ef  80             next pattern
+$14f0:
+   $14f0  cd 00 1f 15    vol  13  attack +0 x0 every 1  decay -1 x15 every 5
+   $14f4  84 01 11       release at row 1, -1 every 1
+   $14f7  d7             inst 7
+   $14f8  87 f4          transpose -12
+   $14fa  e5             dur  6
+   $14fb  15             note A-2  (21)
+   $14fc  15             note A-2  (21)
+   $14fd  15             note A-2  (21)
+   $14fe  e3             dur  4
+   $14ff  15             note A-2  (21)
+   $1500  e1             dur  2
+   $1501  15             note A-2  (21)
+   $1502  e5             dur  6
+   $1503  13             note G-2  (19)
+   $1504  13             note G-2  (19)
+   $1505  13             note G-2  (19)
+   $1506  e3             dur  4
+   $1507  13             note G-2  (19)
+   $1508  e1             dur  2
+   $1509  13             note G-2  (19)
+   $150a  e3             dur  4
+   $150b  13             note G-2  (19)
+   $150c  13             note G-2  (19)
+   $150d  87 00          transpose +0
+   $150f  80             next pattern
+$1510:
+   $1510  cd 00 00 00    vol  13  attack +0 x0 every 0  decay -0 x0 every 0
+   $1514  d7             inst 7
+   $1515  84 02 11       release at row 2, -1 every 1
+   $1518  8c 0a 00 08    porta-on-release +10 x8
+   $151c  e1             dur  2
+   $151d  86             note off
+   $151e  e7             dur  8
+   $151f  15             note A-2  (21)
+   $1520  ef             dur  16
+   $1521  86             note off
+   $1522  83             END
+$1523:
+   $1523  cf 00 00 00    vol  15  attack +0 x0 every 0  decay -0 x0 every 0
+   $1527  84 01 11       release at row 1, -1 every 1
+   $152a  e3             dur  4
+   $152b  d1             inst 1
+   $152c  0c             note C-2  (12)
+   $152d  d2             inst 2
+   $152e  0c             note C-2  (12)
+   $152f  d1             inst 1
+   $1530  0c             note C-2  (12)
+   $1531  d2             inst 2
+   $1532  0c             note C-2  (12)
+   $1533  d1             inst 1
+   $1534  0c             note C-2  (12)
+   $1535  d2             inst 2
+   $1536  0c             note C-2  (12)
+   $1537  d1             inst 1
+   $1538  0c             note C-2  (12)
+   $1539  d2             inst 2
+   $153a  0c             note C-2  (12)
+   $153b  d1             inst 1
+   $153c  0c             note C-2  (12)
+   $153d  d2             inst 2
+   $153e  0c             note C-2  (12)
+   $153f  d1             inst 1
+   $1540  0c             note C-2  (12)
+   $1541  d2             inst 2
+   $1542  0c             note C-2  (12)
+   $1543  d1             inst 1
+   $1544  0c             note C-2  (12)
+   $1545  d2             inst 2
+   $1546  0c             note C-2  (12)
+   $1547  d1             inst 1
+   $1548  0c             note C-2  (12)
+   $1549  d2             inst 2
+   $154a  0c             note C-2  (12)
+   $154b  d1             inst 1
+   $154c  0c             note C-2  (12)
+   $154d  d2             inst 2
+   $154e  0c             note C-2  (12)
+   $154f  d1             inst 1
+   $1550  0c             note C-2  (12)
+   $1551  d2             inst 2
+   $1552  0c             note C-2  (12)
+   $1553  d1             inst 1
+   $1554  0c             note C-2  (12)
+   $1555  d2             inst 2
+   $1556  0c             note C-2  (12)
+   $1557  d1             inst 1
+   $1558  0c             note C-2  (12)
+   $1559  d2             inst 2
+   $155a  0c             note C-2  (12)
+   $155b  d1             inst 1
+   $155c  0c             note C-2  (12)
+   $155d  d2             inst 2
+   $155e  0c             note C-2  (12)
+   $155f  0c             note C-2  (12)
+   $1560  0c             note C-2  (12)
+   $1561  bc             vol  12
+   $1562  d6             inst 6
+   $1563  eb             dur  12
+   $1564  18             note C-3  (24)
+   $1565  83             END
+$1568:
+   $1568  ff             dur  32
+   $1569  86             note off
+   $156a  86             note off
+   $156b  ff             dur  32
+   $156c  86             note off
+   $156d  86             note off
+   $156e  80             next pattern
+$156b:
+   $156b  ff             dur  32
+   $156c  86             note off
+   $156d  86             note off
+   $156e  80             next pattern

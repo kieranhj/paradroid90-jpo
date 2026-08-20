@@ -17,3 +17,19 @@ and the BBC Micro previews (SN76489 emulation of the converted VGMs) are
       python tools/vgmrender.py output/vgm/paradroid90_sub$s.vgm \
              -o output/wav/sn_sub$s.wav
     done
+
+For Nitro, with
+
+    TW=input/extracted/Nitro/tw.Nitro
+
+the Amiga renders are
+
+    for s in 1 2 3 4 5 6; do
+      python tools/twrender.py $TW -s $s -o output/wav/nitro_sub$s.wav
+    done
+
+and the BBC Micro previews are
+
+    for s in 1 2 3 4 5 6; do
+      python tools/vgmrender.py output/vgm/nitro_sub$s.vgm              -o output/wav/nitro_sn_sub$s.wav
+    done
